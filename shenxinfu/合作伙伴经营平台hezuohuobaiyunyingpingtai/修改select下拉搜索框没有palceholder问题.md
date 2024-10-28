@@ -1,0 +1,9 @@
+引入了Ref和writableComputeRef
+watch
+定义了useSelectrPlaceHolder自定义函数，接受三个参数:open,placeholder,overlayContainer,
+open响应式引用，表示选择是否打开
+placeholder
+overlayContainer表示选择框的容器选择器
+占位符的函数setInputSelectPlaceholder
+设置搜索框的占位符
+const set
