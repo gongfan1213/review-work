@@ -43,8 +43,13 @@ callbakc:(actionName)=>{if(actionname==='submit'){
 }}
 批量删除
 getAllSelections
-this.$confirm:对应的titlle,subtitle,msg,autoClose,callback当中处理对应的逻辑
+this.$confirm:对应的titlle,subtitle,msg,autoClose,callback当中处理对应的逻辑，处理对应的接口请求参数，id值，还有实例.hide,调用对应接口请求方法
 forEach
 ajaxDelete方法
 调用对应删除接口
 success,msg,处理错误，this.$ok,删除成功后刷新表格
+# 封装的组件
+新增和编辑都用一个组件，传进去某些值判断是否显示某些值
+# size ,pageChange
+Object.assign(params,{pageNo,pageSize})
+//再刷新列表
