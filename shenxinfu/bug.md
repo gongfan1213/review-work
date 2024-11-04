@@ -1,8 +1,38 @@
 # [2024090900169]【客户经营平台930】指定客户经营接口人弹窗，“角色职责”后少了冒号“:”
-- [2024082900347]【历史遗留】【组件库】【交互检视】指定服务总接口人的界面样式问题
-- [2024082800427]【经营平台930】指定服务总接口人，点击空白处关闭确认变更弹窗，指定服务总接口人的确定按钮仍被禁用
-- [2024082800434]【经营平台930】指定服务总接口人中，点击取消button关闭确认变更二次弹窗后，关闭了所有弹窗并toast提示成功
-- [2024082900385]【经营平台930】指定服务总接口人，确认变更弹窗点击“取消”，清除了已选中的子账号
+# [2024082900347]【历史遗留】【组件库】【交互检视】指定服务总接口人的界面样式问题
+# [2024082800427]【经营平台930】指定服务总接口人，点击空白处关闭确认变更弹窗，指定服务总接口人的确定按钮仍被禁用
+# [2024082800434]【经营平台930】指定服务总接口人中，点击取消button关闭确认变更二次弹窗后，关闭了所有弹窗并toast提示成功
+```js
+//const openModal = (isEmpty: boolean, value: number[] | undefined , oldValue: number[] | undefined) => {
+const openModal = (isEmpty: boolean, value: number[] | undefined) => {
+  return new Promise((resolve) => {
+    modal.confirm(
+      {
+          });
+          resolve(true);
+        },
+        onClose: () => {
+          resolve(false);
+        },
+        onCancel: () => {
+        //  formGroup.setValue({
+          //  ids: oldValue,
+         // });
+          resolve(false);
+        },
+      }
+  }
+}
+
+//const deleteInterfacePerson = () => {
+ // const ids = formGroup.getValue().ids;
+ // openModal(true, undefined, ids);
+//}
+const deleteInterfacePerson = () =>  openModal(true, undefined)
+
+```
+# [2024082900385]【经营平台930】指定服务总接口人，确认变更弹窗点击“取消”，清除了已选中的子账号
+删除oldValue
 # [2024081400101]千流AI-【E2E自动化用例生成】测试任务页面不应该出现 ai生成按钮
 # [2024081300208]千流AI-【E2E自动化用例生成】编辑测试用例时，不显示AI生成的背景框
 # [2024081300330]千流AI-【E2E自动化用例生成】AI生成测试设计操作样式修改
