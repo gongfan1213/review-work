@@ -1,4 +1,15 @@
 # 新增lite
+- 海外SaaS EDR支持开通Lite版
+- 1、试用场景：
+
+- 1）SaaS EDR 试用支持选择 Lite版或Ulitmate版
+
+- 2）试用激活卡片提示区分授权版本
+
+- 2、正式开通场景
+
+- 1）授权开通支持选择Lite Edition
+
 # 新增国家选项，马拉西亚，印度尼西亚和其他
 # 东南亚子账号新增新增xdr
 - hide isSea改成false,条件判断新增xdr
