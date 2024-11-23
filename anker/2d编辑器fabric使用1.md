@@ -8,6 +8,9 @@
   ```js
 <canvas id="canavs"></canvas>
   ```
+
+
+
 - 在html上创建一个canvas标签容器之后作用于fabric.js进行初始化，通过以下构造器挂载
 
 ```js
