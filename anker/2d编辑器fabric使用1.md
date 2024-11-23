@@ -5,9 +5,9 @@
 
   ## 初始化fabric.js canvas
 
-  ```js
+```js
 <canvas id="canavs"></canvas>
-  ```
+```
 
 
 
@@ -22,7 +22,6 @@ height：number；//高度
 preserveObjectStacking：boolean；//选中的时候是否保持对象的堆叠顺序
 selectionBorderColor:string;//选择边框颜色
 selectionColor:string;//选择狂背景颜色
-
 ```
 
 - 初始化挂载完毕以后，就是可以通过实例化变量对象canvas进行对画布的交互
