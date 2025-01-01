@@ -145,3 +145,145 @@ const selectedLength = selectedItems.length;
 4. **处理空文件列表**：如果文件列表为空，设置网络加载状态为 `false`。
 
 通过这种方式，`handleDrop` 函数能够高效地处理拖放文件的上传和显示，为用户提供流畅的操作体验。
+
+
+`DataTransfer` 是一个接口，提供了在拖放操作中使用的数据。它包含了拖放操作中传输的数据和相关的操作方法。`DataTransfer` 对象通常在 `drag` 和 `drop` 事件中使用。
+
+### `DataTransfer` 属性
+
+以下是 `DataTransfer` 对象的一些常用属性：
+
+1. **`dropEffect`**：一个字符串，表示拖放操作的效果。可能的值有：
+   - `"none"`：没有拖放操作。
+   - `"copy"`：表示将数据复制到目标位置。
+   - `"move"`：表示将数据移动到目标位置。
+   - `"link"`：表示创建一个链接到目标位置。
+
+2. **`effectAllowed`**：一个字符串，表示允许的拖放操作效果。可能的值有：
+   - `"none"`：不允许任何拖放操作。
+   - `"copy"`：只允许复制操作。
+   - `"copyLink"`：允许复制和链接操作。
+   - `"copyMove"`：允许复制和移动操作。
+   - `"link"`：只允许链接操作。
+   - `"linkMove"`：允许链接和移动操作。
+   - `"move"`：只允许移动操作。
+   - `"all"`：允许所有操作。
+
+3. **`files`**：一个 `FileList` 对象，包含拖放操作中传输的文件。每个文件都是一个 `File` 对象。
+
+4. **`items`**：一个 `DataTransferItemList` 对象，包含拖放操作中传输的所有数据项。每个数据项都是一个 `DataTransferItem` 对象。
+
+5. **`types`**：一个字符串数组，表示拖放操作中传输的数据类型。
+
+### `DataTransfer` 方法
+
+以下是 `DataTransfer` 对象的一些常用方法：
+
+1. **`clearData([format])`**：清除指定格式的数据。如果没有指定格式，则清除所有数据。
+
+2. **`getData(format)`**：获取指定格式的数据。
+
+3. **`setData(format, data)`**：设置指定格式的数据。
+
+4. **`setDragImage(image, x, y)`**：设置拖动过程中显示的图像及其位置。
+
+### 示例代码
+
+以下是一个示例代码，展示了如何使用 `DataTransfer` 对象的属性和方法：
+
+```javascript
+const handleDrop = (event) => {
+  event.preventDefault();
+
+  // 获取拖放的文件列表
+  const files = event.dataTransfer.files;
+
+  // 获取拖放的数据类型
+  const types = event.dataTransfer.types;
+
+  // 获取拖放的效果
+  const dropEffect = event.dataTransfer.dropEffect;
+
+  // 获取允许的拖放效果
+  const effectAllowed = event.dataTransfer.effectAllowed;
+
+  console.log('Files:', files);
+  console.log('Types:', types);
+  console.log('Drop Effect:', dropEffect);
+  console.log('Effect Allowed:', effectAllowed);
+
+  // 处理文件
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    console.log('File:', file.name);
+  }
+};
+
+const handleDragOver = (event) => {
+  event.preventDefault();
+  event.dataTransfer.dropEffect = 'copy'; // 设置拖放效果为复制
+};
+
+document.addEventListener('drop', handleDrop);
+document.addEventListener('dragover', handleDragOver);
+```
+
+### 详细解释
+
+1. **获取拖放的文件列表**
+
+```javascript
+const files = event.dataTransfer.files;
+```
+
+- `files` 是一个 `FileList` 对象，包含拖放操作中传输的文件。
+
+2. **获取拖放的数据类型**
+
+```javascript
+const types = event.dataTransfer.types;
+```
+
+- `types` 是一个字符串数组，表示拖放操作中传输的数据类型。
+
+3. **获取拖放的效果**
+
+```javascript
+const dropEffect = event.dataTransfer.dropEffect;
+```
+
+- `dropEffect` 是一个字符串，表示拖放操作的效果。
+
+4. **获取允许的拖放效果**
+
+```javascript
+const effectAllowed = event.dataTransfer.effectAllowed;
+```
+
+- `effectAllowed` 是一个字符串，表示允许的拖放操作效果。
+
+5. **处理文件**
+
+```javascript
+for (let i = 0; i < files.length; i++) {
+  const file = files[i];
+  console.log('File:', file.name);
+}
+```
+
+- 遍历 `files` 列表，处理每个文件。
+
+6. **设置拖放效果**
+
+```javascript
+const handleDragOver = (event) => {
+  event.preventDefault();
+  event.dataTransfer.dropEffect = 'copy'; // 设置拖放效果为复制
+};
+```
+
+- 在 `dragover` 事件中，设置 `dropEffect` 为 `copy`，表示拖放操作的效果为复制。
+
+### 总结
+
+`DataTransfer` 对象在拖放操作中提供了传输数据和相关操作的方法。通过使用 `DataTransfer` 对象的属性和方法，可以获取拖放的文件列表、数据类型、拖放效果等信息，并进行相应的处理。
