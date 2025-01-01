@@ -1,7 +1,7 @@
 - useInView 是一个来自 react-intersection-observer 库的钩子，用于检测元素是否在视口中。这个钩子基于 Intersection Observer API 实现，提供了一种简便的方法来监听元素是否进入或离开视口。
 - 使用 useInView 钩子：
 - 在你的组件中使用 useInView 钩子来检测元素是否在视口中。以下是一个简单的示例：
-、、、
+```
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -24,7 +24,8 @@ const MyComponent = () => {
 };
 
 export default MyComponent;
-、、、
+```
+
 - 参数和返回值
 - useInView 钩子支持多个参数和返回值：
 
