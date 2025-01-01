@@ -260,7 +260,7 @@ setSelectAll(!selectAll);
 
 ### `deleteProject` 函数
 
-``````javascript
+```javascript
 const deleteProject = (id: any) => {
   itemOperator(id);
   setOpenDialog(true);
