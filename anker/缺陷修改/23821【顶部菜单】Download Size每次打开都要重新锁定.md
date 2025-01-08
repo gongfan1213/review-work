@@ -1,0 +1,10 @@
+- 【操作步骤：】 
+- 1.进入编辑器，点击下载按钮
+- 2.把Download Size锁打开
+- 3.点击download
+- 4.关闭弹窗重新打开
+- 【实际结果：】 
+- 重新打开弹窗，Download Size锁没有默认锁定
+- 【预期结果：】 
+- Download Size每次打开都要重新锁定
+- setisLock(true)
