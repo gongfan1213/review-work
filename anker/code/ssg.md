@@ -16,6 +16,7 @@ createPages 函数
 
 createPages 函数用于动态创建页面。它通过 GraphQL 查询获取数据，并根据数据创建页面。
 
+```
 import { CreatePageArgs, CreatePagesArgs, CreateWebpackConfigArgs } from 'gatsby'
 import path from 'path'
 import fs from 'fs'
@@ -65,6 +66,7 @@ export const createPages = async (args: CreatePagesArgs) => {
     }
   })
 }
+```
 
 - GraphQL 查询：获取所有应用的数据，包括 slug 和 component。
 - 创建页面：根据查询结果动态创建页面，并设置路径和上下文。
@@ -73,6 +75,7 @@ onCreatePage 函数
 
 onCreatePage 函数用于在页面创建时修改页面路径，以支持多语言（locale）。
 
+```
 export const onCreatePage = async (args: CreatePagesArgs) => {
   const { actions, page: unknownPage } = args
 
@@ -94,13 +97,14 @@ export const onCreatePage = async (args: CreatePagesArgs) => {
     context: { ...newPage.context },
   })
 }
+```
 
 - 修改路径：为每个页面添加 locale 前缀，以支持多语言。
 
 onCreateWebpackConfig 函数
 
 onCreateWebpackConfig 函数用于自定义 Webpack 配置。
-
+```
 export const onCreateWebpackConfig = (args: CreateWebpackConfigArgs) => {
   const { actions, loaders, getConfig, stage } = args
 
@@ -148,14 +152,14 @@ export const onCreateWebpackConfig = (args: CreateWebpackConfigArgs) => {
 
   actions.replaceWebpackConfig(config);
 }
-
+```
 - 自定义 Webpack 规则：添加对 .worker.js、.node 和 .obj 文件的处理。
 - 配置 SplitChunksPlugin：优化代码分割。
 
 2. GraphQL 查询
 
 Gatsby 使用 GraphQL 查询来获取数据。在 createPages 函数中，通过 GraphQL 查询获取所有应用的数据。
-
+```
 query AllApp {
   allApp {
     nodes {
@@ -166,11 +170,11 @@ query AllApp {
     }
   }
 }
-
+```
 3. useStaticQuery 钩子
 
 useStaticQuery 钩子用于在组件中获取静态数据。
-
+```
 import { graphql, useStaticQuery } from "gatsby"
 
 export const useSiteMetadata = () => {
@@ -190,7 +194,7 @@ export const useSiteMetadata = () => {
 
   return data.site.siteMetadata
 }
-
+```
 - GraphQL 查询：获取站点的元数据。
 - 返回数据：返回查询到的站点元数据。
 
