@@ -1,3 +1,16 @@
+# 待更新
+
+# 做过的AI Agents和机器学习相关的项目
+
+1.从0到1Agent搭建:主要使用了Python，结合FastAPI框架构建web服务，利用LangChain进行自然语言和工具的集成，使用Redis进行数据存储，Qdrant进行向量存储，Docker部署，使用WebSocket进行实时交互，TTS异步处理语音合成，长时记忆处理，多角色对话模拟，情感感知和回应调整，工具调整和问题解答，记忆管理和历史对话总结，
+
+2.基于知识链的ChatGLM本地化知识库检索和智能答案的生成，基于ChatGLM搭建专业客服的问答机器人，智能填表，文本转博客
+
+3.SmartRecipe:食材识别：训练一个多标签图像分类器模型，识别给定图像当中多种食材，微调一个LLM来学习食谱推荐，该模型应分析输入食材并建议多个可行的食谱，提供关于食材数量和制备方法的详细信息，营养分析系统：基于食谱中各种食材的多样性，将其营养内容与食谱信息关联起来。在创建食谱推荐的训练数据时，可以将这些营养信息整合起来，以提供更全面的建议。
+
+4.基于情感分析和关联规则挖掘的新闻推荐系统，使用HuffPost数据集，爬虫实现数据采集，清洗，分词，去停用词，词型还原进行数据预处理，LDA主题提取。新闻分类，VADER,TextBlob等情感分析，实体分析，使用Apriopri进行关联规则挖掘，依据用户浏览和点击内容生成推荐，用Embedding/TF-IDF实现分类特征，提升机器学习性能，用Transformer实现英译中，搭建多层级负面舆情预警机制，通过实时监测新闻情感得分，触发预警并挖掘高频负面实体，以可视化报表呈现，。
+
+
 ![image](https://github.com/user-attachments/assets/7553335f-3efd-4749-93f1-1c6bcc869e10)
 
 
@@ -45,8 +58,151 @@
 
 ![image](https://github.com/user-attachments/assets/06daff0b-2732-4564-8471-300ee114d98c)
 
+-console-plugin-resource-center
+
+
+
+**技术栈:**
+
+*   **核心框架:** React
+*   **语言:** TypeScript
+*   **UI 库:** Ant Design (推测，基于常见的后台组件如 Table, Modal, Select, Alert 等)
+*   **CSS 方案:** Tailwind CSS (用于响应式布局和原子化 CSS)
+*   **状态管理:** React Hooks (useState, useEffect, useMemo, useCallback), 可能包含自定义 Hooks (如 `useUpdateEffect`)
+*   **数据请求:** (未明确，通常为 Axios 或 Fetch)
+
+**项目描述与个人亮点:**
+
+该项目是一个嵌入式控制台插件，旨在提供统一的云资源管理界面，核心功能包括资源的多维度查询、展示、标签管理和资源调拨。
+
+**负责内容与技术难点:**
+
+1.  **复杂查询与筛选系统:**
+    *   **挑战:** 实现资源列表的多条件、联动筛选功能。例如，地域选择后动态加载可用区，租户选择后联动部门和资源组，云产品联动资源类型。涉及多个异步请求和复杂的状态依赖管理。
+    *   **亮点:** 设计并实现了高效的状态管理逻辑，确保筛选条件之间的联动流畅且数据准确。通过缓存和节流/防抖（如果应用了）优化了数据请求频率，提升了用户体验。利用 URL 参数同步查询条件，实现了可分享和持久化的筛选状态。
+
+2.  **动态表格与权限控制:**
+    *   **挑战:** 根据不同的用户角色（如系统管理员）和系统配置，动态展示或隐藏表格列（如部门、资源组）及操作按钮（如编辑、调拨）。
+    *   **亮点:** 在前端实现了灵活的权限控制逻辑，根据用户身份动态渲染 UI，确保不同角色的用户看到符合其权限的操作界面和数据视图。
+
+3.  **批量操作与业务校验:**
+    *   **挑战:** 开发资源批量添加标签功能时，需要处理选中资源的标签数量限制（如单个资源最多10个标签），并清晰地向用户展示哪些资源可添加、哪些不可添加及其原因。
+    *   **亮点:** 设计了清晰的批量操作交互流程，在前端实现了标签数量校验逻辑，提升了操作效率并减少了后端压力。通过分组展示（可添加/不可添加列表），优化了批量操作结果的反馈。
+
+4.  **组件化与代码复用:**
+    *   **挑战:** 项目包含多个功能独立的弹窗操作（如添加标签、编辑标签、资源调拨、导出列表）。
+    *   **亮点:** 将各功能封装为独立的、可复用的 React 组件（如 <mcsymbol name="AddLabelModal" filename="addLabelModal.tsx" path="d:\code\console-plugin-resource-center\src\pages\resourceList\components\addLabelModal.tsx" startline="19" type="function"></mcsymbol>, `EditLabelModal`, `AppropriateModal` 等），提高了代码的可维护性和开发效率。通过 Props 和回调函数实现父子组件通信和状态管理。
+
+5.  **响应式布局:**
+    *   **挑战:** 需要确保管理界面在不同屏幕尺寸（尤其是常见的桌面分辨率）下均有良好的展示效果。
+    *   **亮点:** 使用 Tailwind CSS 的响应式工具类，实现了关键组件（如 Modal 弹窗）和整体布局的响应式设计，适配不同屏幕尺寸。
+
+- console-plugin-account
+
+
+
+### 技术栈概览
+
+*   **核心框架与语言:** React, TypeScript
+*   **代码规范与质量:** ESLint, Prettier, Stylelint
+*   **构建与部署:** Webpack (推测，基于 `config/` 和 `scripts/`), Docker
+*   **测试:** Cypress (端到端测试), Jest (单元/集成测试，基于 `config/jest/`)
+*   **国际化:** i18next
+*   **包管理:** npm 或 yarn (基于 `package.json`, `yarn.lock` 或 `package-lock.json`)
+*   **环境配置:** dotenv (`.env.development`)
+
+---
+
+### 项目重点与难点 (简历亮点)
+
+1.  **前端插件化架构实践:**
+    *   **难点:** 设计和实现了一个可独立开发、部署和动态加载到主控制台的插件系统（参考 `console-extensions.json`）。需要处理插件与宿主应用的通信、生命周期管理、样式隔离和版本兼容性问题。
+    *   **亮点:** 具备复杂前端架构设计能力，成功将业务模块解耦为插件，提升了系统的灵活性和可维护性。
+
+2.  **TypeScript 在复杂项目中的深度应用:**
+    *   **难点:** 在大型项目中全面应用 TypeScript，定义复杂的类型接口、泛型以及模块规范，确保代码的类型安全和可维护性（参考 `tsconfig.json`, `react-app-env.d.ts`）。
+    *   **亮点:** 精通 TypeScript，能利用其高级特性提升大型应用代码质量和开发效率。
+
+3.  **前端工程化体系建设:**
+    *   **难点:** 搭建和维护了一套完整的前端工程化流程，包括代码规范检查 (ESLint, Prettier, Stylelint)、自动化构建、多环境配置 (`.env.development`, `config/env.js`) 和 Docker 容器化部署 (`Dockerfile`)。
+    *   **亮点:** 具备完整的前端工程化思维和实践经验，能有效提升团队开发效率和项目质量。
+
+4.  **国际化 (i18n) 方案实施:**
+    *   **难点:** 实现了支持多语言的前端界面，包括文案提取、翻译资源管理 (`locales/`, `i18next-parser.config.js`) 和动态切换。
+    *   **亮点:** 熟悉前端国际化流程和工具，能够满足产品的全球化需求。
+
+5.  **端到端 (E2E) 自动化测试:**
+    *   **难点:** 使用 Cypress (`integration-tests-cypress/`) 编写和维护端到端测试用例，模拟用户真实操作流程，覆盖核心功能，确保插件集成后的稳定性。
+    *   **亮点:** 具备自动化测试经验，能够通过 E2E 测试保障复杂前端应用的质量。
+
+6.  **控制台插件特有交互与体验优化:**
+    *   **难点:** 作为控制台插件，需要与主应用框架紧密集成，遵循其设计规范，并针对账号管理等特定业务场景进行复杂的表单、数据展示和权限交互设计与优化。
+    *   **亮点:** 能够应对特定领域（如云控制台、管理后台）的复杂交互需求，注重用户体验。
+
+---
+
+**简历描述建议:**
+
+> **项目名称:** XXX 控制台账号管理插件
+>
+> **技术栈:** React, TypeScript, Webpack, Docker, Cypress, i18next, ESLint, Prettier
+>
+> **项目描述/个人职责:**
+>
+> *   负责账号管理插件的前端架构设计与核心功能开发，采用 **插件化** 思想实现模块解耦与动态加载。
+> *   深度应用 **TypeScript** 进行类型约束，提升大型项目代码健壮性与可维护性。
+> *   主导搭建项目 **前端工程化** 体系，集成代码规范检查、自动化构建及 **Docker** 部署流程。
+> *   实施 **国际化 (i18n)** 方案，支持多语言环境。
+> *   利用 **Cypress** 编写端到端测试用例，保障核心业务流程的稳定性。
+
+---
+
+
+
 
 工作内容：1. 使用React,Arco Design组件库开发了ResourcePage组件，实现了资源管理的核心功能，通过表格展示资源信息，包括资源名称、区域等，根据不同的标签实现多种的数据和筛选，对每个资源行提供管理，转移和编辑标签的操作，实现了批量转移和批量添加标签，完成了其中的转移策略，导入，添加策略，提供了面向用户，方便用户了解当前页面的位置和层级结构，使用react hooks和redux实现了对状态的管理。  
 
 2. 封装了addLabelModal,exportModal,filterIcon,labelKeySelector等组件，实现了数据选择器组件的开发，带有提示文本的过滤图标，批量添加标签到资源，根据用户的权限和选择动态调整导出选项实现了导出资源列表。  
 
+- console-plugin-quota
+
+  好的，根据您提供的代码片段，可以为您生成一份适用于前端简历的项目描述：
+
+---
+
+**项目名称：** 控制台插件 - 配额管理 (示例名称，请根据实际情况修改)
+
+**技术栈：**
+
+*   **核心框架：** React, TypeScript
+*   **UI 库：** Arco Design Pro, Arco Design React
+*   **状态管理：** React Hooks (useState, useEffect, useRef), 自定义 Hooks (如 `useStorage`)
+*   **HTTP 请求：** Axios
+*   **国际化：** i18next, react-i18next
+*   **样式方案：** CSS Modules, Less
+
+**项目描述与个人亮点：**
+
+*   **负责核心模块开发：** 主导或参与了用户 **登录模块** 的前端开发，基于 **React** 和 **TypeScript** 构建了功能完善、可复用的登录界面。
+*   **组件化实践：** 利用 **Arco Design React** 组件库，高效搭建了包括 **登录表单** (<mcsymbol name="LoginForm" filename="form.tsx" path="d:\code\console-plugin-quota\src\pages\login\form.tsx" startline="17" type="function"></mcsymbol>) 和 **信息轮播** (<mcsymbol name="LoginBanner" filename="banner.tsx" path="d:\code\console-plugin-quota\src\pages\login\banner.tsx" startline="7" type="function"></mcsymbol>) 在内的多个 UI 组件，并通过 **CSS Modules** 实现了样式的精细化管理和隔离。
+*   **复杂表单处理：** 在登录表单中，实现了包括 **输入校验**、**异步请求** (使用 <mcsymbol name="login" filename="form.tsx" path="d:\code\console-plugin-quota\src\pages\login\form.tsx" startline="40" type="function"></mcsymbol> 函数通过 Axios 与后端 API 交互进行用户认证)、**加载状态 (loading)** 反馈、**错误信息 (errorMessage)** 展示以及 **“记住密码”** (利用自定义 `useStorage` Hook 操作 localStorage) 等功能，保证了良好的用户交互体验。
+*   **国际化方案实施：** 深入应用 **i18next** 框架 (<mcfile name="i18n.js" path="d:\code\console-plugin-quota\src\i18n.js"></mcfile>)，配置并实现了应用的多语言支持。关键点包括：
+    *   设置 **动态加载** 不同语言的翻译资源文件 (`/locales/{{lng}}/{{ns}}.json`)。
+    *   集成 **浏览器语言自动检测** (`i18next-browser-languagedetector`)。
+    *   使用 `useTranslation` Hook 在组件中便捷地获取和切换翻译文本。
+    *   通过 **localStorage** 持久化用户的语言偏好设置。
+*   **React Hooks 应用：** 熟练运用 `useState`, `useEffect`, `useRef` 等 React Hooks 进行组件状态管理、副作用处理和 DOM 引用，提升了代码的可读性和可维护性。
+
+**项目难点与个人能力体现：**
+
+*   **异步流程管理：** 有效处理了登录过程中的异步 API 请求、状态更新和 UI 反馈，确保了数据流的正确性和用户体验的流畅性。
+*   **国际化架构设计：** 成功搭建并配置了灵活、可扩展的 i18n 解决方案，能够支持未来更多语言的快速接入。
+*   **组件抽象与复用：** 通过良好的组件设计，提高了代码的复用率，降低了维护成本。
+
+---
+
+**请注意：**
+
+1.  **项目名称** 需要替换为您实际参与的项目名称。
+2.  您可以根据您在项目中的具体贡献和侧重点，调整描述的详略和突出点。
+3.  这份描述是基于您提供的登录相关代码推断的，如果项目还包含其他复杂功能（如图表、复杂数据展示、权限管理等），建议补充相关内容。
