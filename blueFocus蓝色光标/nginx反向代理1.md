@@ -1,5 +1,89 @@
 
+你遇到的“还是502”问题，说明**SSH端口转发在你的本地环境下有兼容性或网络问题**。  
+我们可以换一种方法：**用 Nginx 反向代理部署在公司服务器上**，让你本地直接通过公司服务器的公网IP访问 LLM API。
 
+---
+
+## 方案：公司服务器 Nginx 反向代理
+
+### 1. 在公司服务器上安装 Nginx
+
+如果还没装，执行（CentOS/RedHat/AlmaLinux）：
+
+```bash
+sudo yum install nginx -y
+sudo systemctl start nginx
+sudo systemctl enable nginx
+```
+
+---
+
+### 2. 配置 Nginx 反向代理
+
+编辑 `/etc/nginx/conf.d/llm_proxy.conf`，内容如下：
+
+```nginx
+server {
+    listen 9000;
+    server_name _;
+
+    location / {
+        proxy_pass https://bmc-llm-relay.bluemediagroup.cn;
+        proxy_set_header Host bmc-llm-relay.bluemediagroup.cn;
+        proxy_ssl_server_name on;
+    }
+}
+```
+
+> 这样公司服务器的9000端口就会把所有流量转发到 LLM API。
+
+---
+
+### 3. 重载 Nginx
+
+```bash
+sudo nginx -s reload
+```
+
+---
+
+### 4. 本地访问公司服务器的9000端口
+
+在你本地执行：
+
+```bash
+curl http://47.84.70.98:9000/v1/models -H "Authorization: Bearer sk-lBgsAkt3vZEGy2N5Qn738CmHL5ySK3d6ogaKH9SW1oKk6Nt9"
+```
+
+- 你的代码里 `base_url` 填 `http://47.84.70.98:9000/v1`
+- 这样你本地所有请求都会通过公司服务器转发到 LLM API
+
+---
+
+## 方案优点
+
+- 不需要本地ssh和端口转发，**本地直接访问公司服务器的公网IP即可**。
+- 只要公司服务器能访问API，你本地就一定能用。
+
+---
+
+## 方案缺点
+
+- 需要在公司服务器上有nginx配置权限。
+- 9000端口要对外开放（安全组放行）。
+
+---
+
+## 你只需：
+
+1. 把上面nginx配置加到公司服务器。
+2. 重载nginx。
+3. 本地用 `http://47.84.70.98:9000/v1` 作为API base_url。
+
+---
+
+如需完整操作命令、遇到nginx配置问题、端口不通等，随时贴出报错，我帮你继续搞定！  
+如果你希望用其它端口或加访问密码，也可以告诉我。
 
 你遇到的 `502 Bad Gateway` 错误，常见原因如下：
 
@@ -90,6 +174,74 @@ curl -k https://localhost:9000/v1/models -H "Authorization: Bearer sk-lBgsAkt3vZ
 - 只要这个ssh窗口不关，你本地就能像在公司服务器上一样访问 LLM API。
 
 如有任何后续问题（如curl报错、代码调用报错等），请随时贴出来，我帮你继续解决！
+
+你的这条命令在公司服务器上**已经成功返回了完整的模型列表**，说明：
+
+- **公司服务器可以正常访问 LLM API**，API Key 和网络都没问题。
+- 你看到的 JSON 数据就是所有可用模型的详细信息。
+
+---
+
+## 这说明什么？
+
+- **公司服务器到 LLM API 没有任何问题**，你本地通过 SSH 端口转发理论上也应该可以访问。
+- 你本地出现 502 Bad Gateway，说明 SSH 隧道参数、端口或本地访问方式可能有细节问题。
+
+---
+
+## 下一步怎么做？
+
+### 1. **确认 SSH 隧道命令格式**
+
+请确保你本地的 SSH 隧道命令是**下面这样**（不要有多余空格或换行）：
+
+```bash
+ssh -L 9000:bmc-llm-relay.bluemediagroup.cn:443 root@47.84.70.98
+```
+
+- 这条命令的意思是：你本地9000端口 <==> 公司服务器 <==> bmc-llm-relay.bluemediagroup.cn:443
+
+### 2. **本地 curl 命令**
+
+在本地新开一个终端，执行：
+
+```bash
+curl -k https://localhost:9000/v1/models -H "Authorization: Bearer sk-lBgsAkt3vZEGy2N5Qn738CmHL5ySK3d6ogaKH9SW1oKk6Nt9"
+```
+
+- `-k` 是因为用localhost访问https时证书不匹配，开发环境可以加。
+
+### 3. **如果还是 502，尝试换端口**
+
+有时候本地9000端口被占用，可以换成9001试试：
+
+```bash
+ssh -L 9001:bmc-llm-relay.bluemediagroup.cn:443 root@47.84.70.98
+```
+然后本地访问：
+```bash
+curl -k https://localhost:9001/v1/models -H "Authorization: Bearer sk-lBgsAkt3vZEGy2N5Qn738CmHL5ySK3d6ogaKH9SW1oKk6Nt9"
+```
+
+---
+
+## 重要说明
+
+- **ssh窗口不能关闭**，否则转发会断。
+- **本地curl命令一定要用https://localhost:9000**，不能写成127.0.0.1或其它。
+- **如果你用的是Windows，建议用Git Bash、WSL、MobaXterm等支持ssh的终端。**
+
+---
+
+## 如果还不行
+
+- 请贴出你本地ssh命令、ssh窗口输出、本地curl命令和输出，我帮你继续排查。
+- 你也可以在ssh窗口加 `-v` 参数（`ssh -v -L ...`）看详细日志。
+
+---
+
+**你现在公司服务器curl已经完全OK，说明只差本地转发这一步，马上就能通！**  
+如有任何细节问题，随时贴出来，我帮你搞定！
 
 好的，下面分别给你**ssh端口转发**和**nginx代理**两种方案的详细操作步骤，你任选其一即可。
 
