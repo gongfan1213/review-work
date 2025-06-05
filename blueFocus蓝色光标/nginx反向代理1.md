@@ -1,3 +1,62 @@
+你遇到的 `502 Bad Gateway` 错误，常见原因如下：
+
+---
+
+## 1. **命令格式有误**
+你的 curl 命令里有一段 `"https://Authorizlocalhost:9000/v1/modAkt3vZEGels"`，明显是拼写错了，应该是：
+
+```bash
+curl -k https://localhost:9000/v1/models -H "Authorization: Bearer sk-lBgsAkt3vZEGy2N5Qn738CmHL5ySK3d6ogaKH9SW1oKk6Nt9"
+```
+
+**注意：**
+- `https://localhost:9000/v1/models` 是固定写法
+- `-H "Authorization: Bearer ..."` 之间不能有空格或拼写错误
+
+---
+
+## 2. **502 Bad Gateway 其他常见原因**
+
+- SSH 隧道断开或未建立（但你刚刚ssh是成功的，应该不是这个问题）
+- 目标服务器（bmc-llm-relay.bluemediagroup.cn:443）临时不可用
+- 你本地访问端口写错（比如不是9000）
+
+---
+
+## 3. **正确操作步骤**
+
+1. **确保ssh窗口一直开着**，且命令如下（不要关掉）：
+
+   ```bash
+   ssh -L 9000:bmc-llm-relay.bluemediagroup.cn:443 root@47.84.70.98
+   ```
+
+2. **在本地新开一个终端，执行：**
+
+   ```bash
+   curl -k https://localhost:9000/v1/models -H "Authorization: Bearer sk-lBgsAkt3vZEGy2N5Qn738CmHL5ySK3d6ogaKH9SW1oKk6Nt9"
+   ```
+
+   - 注意不要有拼写错误！
+
+---
+
+## 4. **如果还是502怎么办？**
+
+- 检查ssh窗口有没有报错、有没有断开。
+- 检查公司服务器能不能访问 `bmc-llm-relay.bluemediagroup.cn:443`（你可以ssh上去后用curl测试）。
+- 检查本地端口有没有被占用（换个端口试试，比如9001）。
+
+---
+
+### 总结
+
+- 你刚才的curl命令拼写有误，**请严格按上面格式重试**。
+- 如果还有502，贴出ssh窗口和curl窗口的全部输出，我帮你继续排查！
+
+如有需要，也可以让我帮你写一条一键复制的命令！
+
+
 是的！你这一步已经**成功建立了 SSH 端口转发隧道**。
 
 你看到的内容说明：
