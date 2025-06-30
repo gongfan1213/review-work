@@ -1,0 +1,306 @@
+﻿{
+  "nodes": [
+    {
+      "nodeId": "userGuide",
+      "name": "common:core.module.template.system_config",
+      "intro": "common:core.module.template.system_config_info",
+      "avatar": "core/workflow/template/systemConfig",
+      "flowNodeType": "userGuide",
+      "position": {
+        "x": 262.2732338817093,
+        "y": -476.00241136598146
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "welcomeText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "string",
+          "label": "core.app.Welcome Text",
+          "value": ""
+        },
+        {
+          "key": "variables",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "core.app.Chat Variable",
+          "value": []
+        },
+        {
+          "key": "questionGuide",
+          "valueType": "boolean",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "core.app.Question Guide",
+          "value": false
+        },
+        {
+          "key": "tts",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "value": {
+            "type": "web"
+          }
+        },
+        {
+          "key": "whisper",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "value": {
+            "open": false,
+            "autoSend": false,
+            "autoTTSResponse": false
+          }
+        },
+        {
+          "key": "scheduleTrigger",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "value": null
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "448745",
+      "name": "common:core.module.template.work_start",
+      "intro": "",
+      "avatar": "core/workflow/template/workflowStart",
+      "flowNodeType": "workflowStart",
+      "position": {
+        "x": 602.5617127052677,
+        "y": -360.2444117647097
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "common:core.module.input.label.user question",
+          "required": true,
+          "toolDescription": "用户问题",
+          "debugLabel": ""
+        }
+      ],
+      "outputs": [
+        {
+          "id": "userChatInput",
+          "key": "userChatInput",
+          "label": "common:core.module.input.label.user question",
+          "type": "static",
+          "valueType": "string",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "rp0uEHbyQUqT",
+      "name": "工具调用",
+      "intro": "通过AI模型自动选择一个或多个功能块进行调用，也可以对插件进行调用。",
+      "avatar": "core/workflow/template/toolCall",
+      "flowNodeType": "tools",
+      "showStatus": true,
+      "position": {
+        "x": 944.0948884069002,
+        "y": -556.7305937287499
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "llmModelType": "toolCall",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.5-pro-preview-03-25"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 0,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 32500,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "根据用户选择的情绪共鸣主题（如：打工人被PUA、职场内耗、成长焦虑、努力无果等），生成1篇小红书风格的情绪共鸣爆款笔记，包括：\n\n1. 抓人眼球、情绪爆发类标题（如：“我在实习最后一天，决定卷死老板”）\n2. 正文讲述一个真实故事，结构为：\n   - 起：压抑/困境（被PUA、被否定、不被认可）\n   - 承：情绪累积（尝试改变、委屈隐忍、挣扎）\n   - 转合：情绪爆发+反转翻盘（突然觉醒、反击、跳槽、拿offer）\n3. 文风真实有代入感，适合在小红书引起评论区大量“我也是”的共鸣\n# 注意下面这些细节：\n- 不要编造不存在的产品、品牌、公司等等\n- 互联网上一般不会透露自己的姓名、工作单位、薪资等等\n4. 输出结构为【标题】【正文】，鼓励口语化表达、情绪张力强\n✅【示例：主题 = 被否定的打工人】\n【标题】\n被全组说没用的我，拿了公司唯一一个A+\n\n【正文】\n实习那年，我被分去一个全是“老员工”的组。做了两周PPT没人看，主动提想做数据分析，还被当场怼：“你别自以为很懂。”\n我开始每天加班偷偷看代码、补数据课，组里没人理我，我就默默做需求。直到有一次老板项目卡壳，我主动接手一部分逻辑，熬了三天三夜，做出个小demo。\n\n结尾的组会，老板说：“这个方案保住了我们项目。” 然后全组沉默了，那个一直否定我的人点了点头。绩效出来我拿了组里唯一一个A+，走的时候，他们请我吃了个散伙饭。\n\n我只想说，别让任何人定义你。打工人可以沉默，但不会永远被踩在脚下"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "value": 0,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户输入的问题（问题需要完善）",
+          "required": true,
+          "value": [
+            "448745",
+            "userChatInput"
+          ],
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": ""
+        }
+      ],
+      "outputs": [
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        },
+        {
+          "id": "result",
+          "key": "result",
+          "label": "AI回复",
+          "description": "仅返回AI回复内容，不拼接任何工具调用返回结果",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "448745",
+      "target": "rp0uEHbyQUqT",
+      "sourceHandle": "448745-source-right",
+      "targetHandle": "rp0uEHbyQUqT-target-left"
+    }
+  ],
+  "chatConfig": {
+    "variables": [],
+    "scheduledTriggerConfig": {
+      "cronString": "",
+      "timezone": "Asia/Shanghai",
+      "defaultPrompt": ""
+    },
+    "_id": "682feae9d78bc6762d7050d0"
+  }
+}
