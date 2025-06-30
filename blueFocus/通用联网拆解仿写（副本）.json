@@ -1,0 +1,5327 @@
+﻿{
+  "nodes": [
+    {
+      "nodeId": "userGuide",
+      "name": "common:core.module.template.system_config",
+      "intro": "common:core.module.template.system_config_info",
+      "avatar": "core/workflow/template/systemConfig",
+      "flowNodeType": "userGuide",
+      "position": {
+        "x": -3579.3125828655525,
+        "y": -180.63693131605805
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "welcomeText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "string",
+          "label": "core.app.Welcome Text",
+          "value": ""
+        },
+        {
+          "key": "variables",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "core.app.Chat Variable",
+          "value": []
+        },
+        {
+          "key": "questionGuide",
+          "valueType": "boolean",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "core.app.Question Guide",
+          "value": false
+        },
+        {
+          "key": "tts",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "value": {
+            "type": "web"
+          }
+        },
+        {
+          "key": "whisper",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "value": {
+            "open": false,
+            "autoSend": false,
+            "autoTTSResponse": false
+          }
+        },
+        {
+          "key": "scheduleTrigger",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "value": null
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "448745",
+      "name": "common:core.module.template.work_start",
+      "intro": "",
+      "avatar": "core/workflow/template/workflowStart",
+      "flowNodeType": "workflowStart",
+      "position": {
+        "x": -3209.216978151258,
+        "y": -51.33085218116594
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "common:core.module.input.label.user question",
+          "required": true,
+          "toolDescription": "用户问题",
+          "debugLabel": ""
+        }
+      ],
+      "outputs": [
+        {
+          "id": "userChatInput",
+          "key": "userChatInput",
+          "label": "common:core.module.input.label.user question",
+          "type": "static",
+          "valueType": "string",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "lSGKmidrfIvC",
+      "name": "banana",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": -2836.9878037973353,
+        "y": -213.55175605427257
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.5-pro-preview-03-25"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 32500,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 工作流程\n1. 第一步：首先基于你的理解，分析用户想做的领域里，有哪些长期弥漫的情绪，例如：\n- 中产家庭育儿焦虑，对鸡娃和阶层滑坡的恐惧\n- 30岁优质独立女性对相亲、寻找灵魂伴侣的焦虑\n- 大厂算法男既要炫耀高薪资的心理与自身缺少男性魅力的自卑的冲突\n你需要设身处地思考这些领域的宏观情绪基调，它们往往是复合的、多层的，把这些情绪非常细腻的拆解清楚，与宏观环境（如经济低迷、阶层固化）、个人精神世界的阴暗面（比如控制欲、自私、好面子、好说教）等等有机联系起来，把这些情绪列成一个列表。\n\n2. 第二步：你需要去社媒平台上搜索一些内容来了解情况，为此，想一个用于搜索的关键词。\n- 关键词可以是一个问句，比如“30岁没有工作很丢人吗”\n- 可以是一个热点新闻，比如“董小姐 4+4”\n- 可以是一些词，比如“鸡娃 崩溃”（用空格隔开，不超过3个）\n使用下列指定的xml格式，例如：\n<query>鸡娃 崩溃</query>"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "value": 0,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 0,
+          "value": [
+            "448745",
+            "userChatInput"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "o5WsyGa00lb6",
+      "name": "提取query",
+      "intro": "执行一段简单的脚本代码，通常用于进行复杂的数据处理。",
+      "avatar": "core/workflow/template/codeRun",
+      "flowNodeType": "code",
+      "showStatus": true,
+      "position": {
+        "x": -2128.4288792845564,
+        "y": -117.3292646775551
+      },
+      "version": "482",
+      "inputs": [
+        {
+          "key": "system_addInputParam",
+          "renderTypeList": [
+            "addInputParam"
+          ],
+          "valueType": "dynamic",
+          "label": "",
+          "required": false,
+          "description": "workflow:these_variables_will_be_input_parameters_for_code_execution",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "codeType",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": "js",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "code",
+          "renderTypeList": [
+            "custom"
+          ],
+          "label": "",
+          "value": "function main({input}) {\n  function extractContent(text, tagName) {\n    const startTag = `<${tagName}>`\n    const endTag = `</${tagName}>`\n    \n    const startIndex = text.indexOf(startTag)\n    const endIndex = text.indexOf(endTag)\n    \n    if(startIndex === -1 || endIndex === -1) {\n      return `Error: Cannot find ${tagName} tags`\n    }\n    \n    return text.substring(startIndex + startTag.length, endIndex)\n  }\n\n  return {\n    query: extractContent(input, 'query')\n  }\n}",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "string",
+          "canEdit": true,
+          "key": "input",
+          "label": "input",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": [
+            "lSGKmidrfIvC",
+            "answerText"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "system_rawResponse",
+          "key": "system_rawResponse",
+          "label": "workflow:full_response_data",
+          "valueType": "object",
+          "type": "static",
+          "description": ""
+        },
+        {
+          "id": "error",
+          "key": "error",
+          "label": "workflow:execution_error",
+          "description": "代码运行错误信息，成功时返回空",
+          "valueType": "object",
+          "type": "static"
+        },
+        {
+          "id": "system_addOutputParam",
+          "key": "system_addOutputParam",
+          "type": "dynamic",
+          "valueType": "dynamic",
+          "label": "",
+          "customFieldConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": false
+          },
+          "description": "将代码中 return 的对象作为输出，传递给后续的节点。变量名需要对应 return 的 key",
+          "valueDesc": ""
+        },
+        {
+          "id": "qb95YQhCAz3S",
+          "valueType": "string",
+          "type": "dynamic",
+          "key": "query",
+          "label": "query"
+        }
+      ]
+    },
+    {
+      "nodeId": "moMw7CTSCIL5",
+      "name": "fisherman",
+      "intro": "可以发出一个 HTTP 请求，实现更为复杂的操作（联网搜索、数据库查询等）",
+      "avatar": "core/workflow/template/httpRequest",
+      "flowNodeType": "httpRequest468",
+      "showStatus": true,
+      "position": {
+        "x": -1656.7021298147888,
+        "y": -84.42889857596037
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "system_addInputParam",
+          "renderTypeList": [
+            "addInputParam"
+          ],
+          "valueType": "dynamic",
+          "label": "",
+          "required": false,
+          "description": "common:core.module.input.description.HTTP Dynamic Input",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpMethod",
+          "renderTypeList": [
+            "custom"
+          ],
+          "valueType": "string",
+          "label": "",
+          "value": "POST",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpTimeout",
+          "renderTypeList": [
+            "custom"
+          ],
+          "valueType": "number",
+          "label": "",
+          "value": 30,
+          "min": 5,
+          "max": 600,
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpReqUrl",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "string",
+          "label": "",
+          "description": "common:core.module.input.description.Http Request Url",
+          "placeholder": "https://api.ai.com/getInventory",
+          "required": false,
+          "value": "https://api.coze.cn/v1/workflow/run",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpHeader",
+          "renderTypeList": [
+            "custom"
+          ],
+          "valueType": "any",
+          "value": [
+            {
+              "key": "Authorization",
+              "value": "Bearer pat_TBI74O4nlY7lCylf7s6LT6duK99K86TxHFylAokkpcfr7kQLI27vZXd2ESrsxEbi",
+              "type": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "string"
+            }
+          ],
+          "label": "",
+          "description": "common:core.module.input.description.Http Request Header",
+          "placeholder": "common:core.module.input.description.Http Request Header",
+          "required": false,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpParams",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "value": [],
+          "label": "",
+          "required": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpJsonBody",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "value": "{\n  \"workflow_id\": \"7503940692227801098\",\n  \"parameters\": {\n    \"input\": \"{{input}}\"\n  }\n}",
+          "label": "",
+          "required": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpFormBody",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "value": [],
+          "label": "",
+          "required": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "system_httpContentType",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "string",
+          "value": "json",
+          "label": "",
+          "required": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "string",
+          "canEdit": true,
+          "key": "input",
+          "label": "input",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "required": true,
+          "value": [
+            "448745",
+            "userChatInput"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "error",
+          "key": "error",
+          "label": "workflow:request_error",
+          "description": "HTTP请求错误信息，成功时返回空",
+          "valueType": "object",
+          "type": "static"
+        },
+        {
+          "id": "httpRawResponse",
+          "key": "httpRawResponse",
+          "required": true,
+          "label": "workflow:raw_response",
+          "description": "HTTP请求的原始响应。只能接受字符串或JSON类型响应数据。",
+          "valueType": "any",
+          "type": "static"
+        },
+        {
+          "id": "system_addOutputParam",
+          "key": "system_addOutputParam",
+          "type": "dynamic",
+          "valueType": "dynamic",
+          "label": "",
+          "customFieldConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": false
+          },
+          "valueDesc": "",
+          "description": ""
+        },
+        {
+          "id": "hUYJ69AEebY0",
+          "valueType": "string",
+          "type": "dynamic",
+          "key": "output",
+          "label": "output"
+        }
+      ]
+    },
+    {
+      "nodeId": "miyAS5I7q9vT",
+      "name": "代码运行",
+      "intro": "执行一段简单的脚本代码，通常用于进行复杂的数据处理。",
+      "avatar": "core/workflow/template/codeRun",
+      "flowNodeType": "code",
+      "showStatus": true,
+      "position": {
+        "x": -892.1422041096996,
+        "y": -85.92889857596037
+      },
+      "version": "482",
+      "inputs": [
+        {
+          "key": "system_addInputParam",
+          "renderTypeList": [
+            "addInputParam"
+          ],
+          "valueType": "dynamic",
+          "label": "",
+          "required": false,
+          "description": "workflow:these_variables_will_be_input_parameters_for_code_execution",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "codeType",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": "js",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "code",
+          "renderTypeList": [
+            "custom"
+          ],
+          "label": "",
+          "value": "function main({ responseBody }) {\n    try {\n        // 解析响应体 - 支持字符串或已解析的对象\n        const response = typeof responseBody === 'string' ? JSON.parse(responseBody) : responseBody;\n        \n        // 解析 data 字段中的 JSON 字符串\n        const dataObj = JSON.parse(response.data);\n        \n        // 创建存储结果的数组\n        const articles = [];\n        \n        // 预填充 20 个空文章对象\n        for (let i = 0; i < 20; i++) {\n            articles.push({ title: \"\", content: \"\" });\n        }\n        \n        // 定义清洗文本的函数\n        function cleanText(text) {\n            // 1. 清除所有类似 [哭惹 R]、[笑哭 R]、[红色心形 R] 的表情符号\n            const emojiCleaned = text.replace(/\\[[^\\]]+\\s[A-Z]\\]/g, '');\n            \n            // 2. 清除文本结尾的所有 #xxx[话题]# 格式的标签\n            const hashtagCleaned = emojiCleaned.replace(/(\\s*#[^#]*\\[话题\\]#\\s*)+$/g, '');\n            \n            // 3. 处理可能出现的多余空格（包括连续空格、行首行尾空格）\n            return hashtagCleaned.replace(/\\s+/g, ' ').trim();\n        }\n        \n        // 遍历 output 数组提取标题和正文，最多处理 20 组\n        if (dataObj.output && Array.isArray(dataObj.output)) {\n            // 处理最多 20 个项目\n            for (let i = 0; i < Math.min(20, dataObj.output.length); i++) {\n                const item = dataObj.output[i];\n                const parts = item.split(/\\n\\s*正文：/);\n                \n                let title = \"\";\n                let content = \"\";\n                \n                if (parts.length > 1) {\n                    // 有标题和正文的情况\n                    title = parts[0].replace('标题：', '').trim();\n                    content = parts[1].trim();\n                } else if (item.startsWith('标题：')) {\n                    // 只有标题的情况\n                    title = item.replace('标题：', '').trim();\n                } else if (item.includes('正文：')) {\n                    // 只有正文的情况\n                    content = item.replace('正文：', '').trim();\n                } else {\n                    // 没有标记的情况，整个文本作为正文\n                    content = item.trim();\n                }\n                \n                // 清洗 content 中的表情符号和 hashtag 标签\n                content = cleanText(content);\n                \n                // 更新数组中的相应文章\n                articles[i] = {\n                    title: title,\n                    content: content\n                };\n            }\n        }\n        \n        // 返回解析结果\n        return {\n            articles: articles,\n            debug_url: response.debug_url\n        };\n    } catch (error) {\n        // 处理解析错误\n        return {\n            error: `解析失败: ${error.message}`,\n            originalResponse: responseBody\n        };\n    }\n}",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "string",
+          "canEdit": true,
+          "key": "responseBody",
+          "label": "responseBody",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": [
+            "moMw7CTSCIL5",
+            "httpRawResponse"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "system_rawResponse",
+          "key": "system_rawResponse",
+          "label": "workflow:full_response_data",
+          "valueType": "object",
+          "type": "static",
+          "description": ""
+        },
+        {
+          "id": "error",
+          "key": "error",
+          "label": "workflow:execution_error",
+          "description": "代码运行错误信息，成功时返回空",
+          "valueType": "object",
+          "type": "static"
+        },
+        {
+          "id": "system_addOutputParam",
+          "key": "system_addOutputParam",
+          "type": "dynamic",
+          "valueType": "dynamic",
+          "label": "",
+          "customFieldConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": false
+          },
+          "description": "将代码中 return 的对象作为输出，传递给后续的节点。变量名需要对应 return 的 key",
+          "valueDesc": ""
+        },
+        {
+          "id": "qLUQfhG0ILRX",
+          "type": "dynamic",
+          "key": "articles",
+          "valueType": "arrayString",
+          "label": "articles",
+          "valueDesc": "",
+          "description": ""
+        },
+        {
+          "id": "k0HHtsHy4DOH",
+          "valueType": "string",
+          "type": "dynamic",
+          "key": "debug_url",
+          "label": "debug_url"
+        }
+      ]
+    },
+    {
+      "nodeId": "hQuQUux8k6UU",
+      "name": "pineapple",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 5872.043379977971,
+        "y": -3191.5443516764235
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.5-pro-preview-03-25"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 32500,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 你的任务是分析用户搜索到的帖子，帮助识别这些帖子的可取之处以及背后机制。\n- 你需要特别关注微观的文本层面，比如句子、用词、表达等等，这些形式上的东西往往比情节内容更关键。\n\n# 背景知识\n对于很多做自媒体账号的人来说，他们自认为的“人设”，与其读者感知的“人设”存在Gap，使得很多时候用户并不清楚自己的某篇帖子为什么火。\n\n具体来说，用户为自己赋予的人设标签，往往只提供：\n  - 客观事实类信息设定，如「前大厂程序员」「三孩宝妈」\n  - 身份标签，如「enfp快乐小狗」「双子座」\n但读者不会因为你也是“天蝎座”就关注你。\n实际上读者看到一条帖子，并关注该账号，意味着“我想获得更多看到这条内容时的体验”。\n那么，读者更希望从这条帖子中获得什么体验？\n\n我们从读者视角具体进行了详细的分类：\n1.  信息输入：\n- “我觉得我需要持续获得这些信息（某个领域的知识、新闻、见解）”\n- “我感到新奇/焦虑”\n- “我喜欢这种信息摄入的体验方式（比如严肃正经、娱乐轻松、高效利用时间，等等）”\n\n2.  观点认同：\n- 某种基于阶层、性别、认知等的意识形态。\n- 例如民族主义叙事、女性主义观点、贫富对立等等倾向，能快速吸引属性相同的读者\n- 核心是让读者觉得“说的太对了、太通透了”\n \n3. 娱乐：\n- 某种娱乐“文学”、抽象文学、戏仿文学\n- 核心是深耕某个细分群体的独特经历、苦难来进行调侃创作，比如关于留子（留学生）在海外的生活、应届大学生找工作的痛苦，等等\n- 必须让读者觉得此人“experienced”：“不是真留子编不出这种段子”\n\n4. 理想（to be）：氛围感，调性，单纯对个人ip形象的欣赏\n\n## 抽象后可以看到，核心在于“共鸣”和“焦虑”。\n### “共鸣”分为两种：\n- 一种是相当细分的人群，在经历相似的情况下才能“会心一笑”的共鸣，比如情侣相处的“下头瞬间”，这些东西不是直接作为选题，而是作为内容中的一部分，读者读到某一句话，某一个场景，某个表述，然后被共鸣到，觉得“这个人确实懂”。读者希望获得更多这种体验，所以点关注。\n- 另一种是宏观的共鸣，是基于民族、政治、性别等等“站队式”的情绪区分的。比如帖子的观点是“坚决支持国家反制美国关税大棒”，就会天然吸引认同。但这种情绪上的认同能不能转化成关注量，则需要在形式和内容上下功夫。比如你比别人讲的透彻，讲的专业；或者你的煽动更有文采，更真人化、情绪化等等。\n\n### “焦虑”与“共鸣”是共生关系，一体两面。\n例如一部分群体有被长辈催婚的压力，有年龄和择偶的焦虑，有寻找灵魂伴侣而不得的焦虑，他们就需要去大量流览比如“相亲的糟糕体验”、“因为被催婚不回家过年了”等这样的帖子。人对抗焦虑的方式无非两种：一是寻找共鸣体验，“大家都这样”；二是给予自身暗示，“我是独特的，做自己就好”。\n\n# 输出格式 & WorkFlow\n- 每个套路都输出“原文”、“文本特征分析”、“读者感知分析”两部分"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "lSGKmidrfIvC",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "现在，我用你的搜索词\"{{$o5WsyGa00lb6.qb95YQhCAz3S$}}\"在社媒平台上搜索到了1篇超火的帖子，请结合上一步的思考，运用你的背景知识进行深度分析：\n\n{{$vtwrraUrH8WZ.qLUQfhG0ILRX$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "grnoJjrjO4xo",
+      "name": "orange",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 7478.096057174479,
+        "y": -3226.5335948490056
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 8000,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 工作流程：\n学习帖子的思路和文本特征，按照用户要求仿写\n\n# 注意必须有“素人感”，禁止任何结构化的语言，禁止任何商业化、套路化的话术。注意你是扮演一个真人从某个视角去写一些什么东西。帖子没有配图，只通过“标题”和“正文”来吸引读者，提供价值。\n\n# 注意下面这些细节：\n- 不要编造不存在的产品、品牌、公司等等\n- 互联网上一般不会透露自己的姓名、工作单位、薪资等等\n- 不要使用套路话术来要求“点赞”、“评论”等等，太假了"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "hQuQUux8k6UU",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "对于上一步你分析的帖子，仿写出3个例子，务必要学到其精髓，同时不能看起来太假，要有“素人感”、“活人感”、“真人感”\n\n用户的需求：{{$448745.userChatInput$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "bd6NE5Uynqvx",
+      "name": "指定回复",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 3773.5934179633787,
+        "y": -428.31497342961393
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\\n\n### 检索到优质结果\n#### 帖子1\n```json\n{{$vtwrraUrH8WZ.qLUQfhG0ILRX$}}\n```\n\n#### 帖子2\n```json\n{{$vtwrraUrH8WZ.gR0mkQpJ4Og8$}}\n```\n\n#### 帖子3\n```json\n{{$vtwrraUrH8WZ.szoDaYDVZZSp$}}\n```\n\n#### 帖子4\n```json\n{{$vtwrraUrH8WZ.m6L9dD3nbxpC$}}\n```\n\n#### 帖子5\n```json\n{{$vtwrraUrH8WZ.fBVP5uO3H8mg$}}\n```\n\n\n#### 请选择一篇进行深度学习与仿写："
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "bqGWMvMZqduR",
+      "name": "指定回复#2",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 6610.823845122858,
+        "y": -2940.6940854034237
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\\n\n## 分析结果\n\n```json\n{{$vtwrraUrH8WZ.qLUQfhG0ILRX$}}\n```\n\n### 分析：\n{{$hQuQUux8k6UU.answerText$}}\n"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "sF2YF4B4kjJL",
+      "name": "指定回复#3",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 8174.811727882025,
+        "y": -3073.5861452728377
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\n## 输出结果\n```\n{{$grnoJjrjO4xo.answerText$}}\n```"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "jRXcvilMA1RX",
+      "parentNodeId": "g96RrEBPGGZQ",
+      "name": "juicer",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 1096.9655638702006,
+        "y": -429.0263823412757
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.0-flash"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 4000,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "### 工作流程：\n1. 判断这条社媒帖子是否需要被剔除，包括：\n- 商业化文：推广软文、营销文、卖课等等\n- 线下约人等帖子\n- title缺失的帖子\n- content太短、意义不明的帖子\n\n2. 只要带有这类的，通通回复“0”，否则回复“1”。\n\n输出格式：使用xml标签包裹你的判断结果，例如：\n<result>0</result>"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "value": 0,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 0,
+          "value": [
+            "cF01tJjOM2N4",
+            "loopStartInput"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "g96RrEBPGGZQ",
+      "name": "循环运行",
+      "intro": "可以输入一个数组，数组内元素将独立执行循环体，并将所有结果作为数组输出。",
+      "avatar": "core/workflow/template/loop",
+      "flowNodeType": "loop",
+      "showStatus": true,
+      "position": {
+        "x": 510.2619277680992,
+        "y": -756.3292646775551
+      },
+      "version": "4811",
+      "inputs": [
+        {
+          "key": "loopInputArray",
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "arrayAny",
+          "required": true,
+          "label": "数组",
+          "value": [
+            "miyAS5I7q9vT",
+            "qLUQfhG0ILRX"
+          ],
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "childrenNodeIdList",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "arrayString",
+          "label": "",
+          "value": [
+            "jRXcvilMA1RX",
+            "cF01tJjOM2N4",
+            "wtynErV4Koer",
+            "cANjtq5Swyu7"
+          ]
+        },
+        {
+          "key": "nodeWidth",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "number",
+          "label": "",
+          "value": 2247.963383299777,
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "nodeHeight",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "number",
+          "label": "",
+          "value": 1454.3028823362795,
+          "debugLabel": "",
+          "toolDescription": ""
+        }
+      ],
+      "outputs": [
+        {
+          "id": "loopArray",
+          "key": "loopArray",
+          "label": "workflow:loop_result",
+          "type": "static",
+          "valueType": "arrayString",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "cF01tJjOM2N4",
+      "parentNodeId": "g96RrEBPGGZQ",
+      "name": "循环体开始",
+      "avatar": "core/workflow/template/loopStart",
+      "flowNodeType": "loopStart",
+      "showStatus": false,
+      "position": {
+        "x": 560.2619277680992,
+        "y": -476.3292646775551
+      },
+      "version": "4811",
+      "inputs": [
+        {
+          "key": "loopStartInput",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "required": true,
+          "value": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        }
+      ],
+      "outputs": [
+        {
+          "id": "loopStartInput",
+          "key": "loopStartInput",
+          "label": "数组元素",
+          "type": "static",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "nodeId": "wtynErV4Koer",
+      "parentNodeId": "g96RrEBPGGZQ",
+      "name": "循环体结束",
+      "avatar": "core/workflow/template/loopEnd",
+      "flowNodeType": "loopEnd",
+      "showStatus": false,
+      "position": {
+        "x": 2278.2253110678757,
+        "y": -99.51798264019045
+      },
+      "version": "4811",
+      "inputs": [
+        {
+          "key": "loopEndInput",
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "any",
+          "label": "",
+          "required": true,
+          "value": [
+            "cANjtq5Swyu7",
+            "qb95YQhCAz3S"
+          ],
+          "debugLabel": "",
+          "toolDescription": ""
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "cANjtq5Swyu7",
+      "parentNodeId": "g96RrEBPGGZQ",
+      "name": "提取result",
+      "intro": "执行一段简单的脚本代码，通常用于进行复杂的数据处理。",
+      "avatar": "core/workflow/template/codeRun",
+      "flowNodeType": "code",
+      "showStatus": true,
+      "position": {
+        "x": 1778.7009416868348,
+        "y": -418.0767881546908
+      },
+      "version": "482",
+      "inputs": [
+        {
+          "key": "system_addInputParam",
+          "renderTypeList": [
+            "addInputParam"
+          ],
+          "valueType": "dynamic",
+          "label": "",
+          "required": false,
+          "description": "workflow:these_variables_will_be_input_parameters_for_code_execution",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "codeType",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": "js",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "code",
+          "renderTypeList": [
+            "custom"
+          ],
+          "label": "",
+          "value": "function main({input}) {\n  function extractContent(text, tagName) {\n    const startTag = `<${tagName}>`\n    const endTag = `</${tagName}>`\n    \n    const startIndex = text.indexOf(startTag)\n    const endIndex = text.indexOf(endTag)\n    \n    if(startIndex === -1 || endIndex === -1) {\n      return `Error: Cannot find ${tagName} tags`\n    }\n    \n    return text.substring(startIndex + startTag.length, endIndex)\n  }\n\n  return {\n    result: extractContent(input, 'result')\n  }\n}",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "string",
+          "canEdit": true,
+          "key": "input",
+          "label": "input",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": [
+            "jRXcvilMA1RX",
+            "answerText"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "system_rawResponse",
+          "key": "system_rawResponse",
+          "label": "workflow:full_response_data",
+          "valueType": "object",
+          "type": "static",
+          "description": ""
+        },
+        {
+          "id": "error",
+          "key": "error",
+          "label": "workflow:execution_error",
+          "description": "代码运行错误信息，成功时返回空",
+          "valueType": "object",
+          "type": "static"
+        },
+        {
+          "id": "system_addOutputParam",
+          "key": "system_addOutputParam",
+          "type": "dynamic",
+          "valueType": "dynamic",
+          "label": "",
+          "customFieldConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": false
+          },
+          "description": "将代码中 return 的对象作为输出，传递给后续的节点。变量名需要对应 return 的 key",
+          "valueDesc": ""
+        },
+        {
+          "id": "qb95YQhCAz3S",
+          "valueType": "string",
+          "type": "dynamic",
+          "key": "result",
+          "label": "result"
+        }
+      ]
+    },
+    {
+      "nodeId": "nacEmwPlkPzB",
+      "name": "判断器",
+      "intro": "根据一定的条件，执行不同的分支。",
+      "avatar": "core/workflow/template/ifelse",
+      "flowNodeType": "ifElseNode",
+      "showStatus": true,
+      "position": {
+        "x": -352.57873011423146,
+        "y": 240.51054282642934
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "ifElseList",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "valueType": "any",
+          "label": "",
+          "value": [
+            {
+              "condition": "AND",
+              "list": [
+                {
+                  "variable": [
+                    "miyAS5I7q9vT",
+                    "qLUQfhG0ILRX"
+                  ],
+                  "condition": "isNotEmpty"
+                }
+              ]
+            }
+          ],
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        }
+      ],
+      "outputs": [
+        {
+          "id": "ifElseResult",
+          "key": "ifElseResult",
+          "label": "workflow:judgment_result",
+          "valueType": "string",
+          "type": "static",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "fTvv1QO3MBoI",
+      "name": "指定回复#4",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 529.0800645929592,
+        "y": 814.6177374644087
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "*检索节点繁忙，请稍后再试~*"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "vtwrraUrH8WZ",
+      "name": "milker",
+      "intro": "执行一段简单的脚本代码，通常用于进行复杂的数据处理。",
+      "avatar": "core/workflow/template/codeRun",
+      "flowNodeType": "code",
+      "showStatus": true,
+      "position": {
+        "x": 3249.925253591227,
+        "y": -776.010439587467
+      },
+      "version": "482",
+      "inputs": [
+        {
+          "key": "system_addInputParam",
+          "renderTypeList": [
+            "addInputParam"
+          ],
+          "valueType": "dynamic",
+          "label": "",
+          "required": false,
+          "description": "workflow:these_variables_will_be_input_parameters_for_code_execution",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "codeType",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": "js",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "code",
+          "renderTypeList": [
+            "custom"
+          ],
+          "label": "",
+          "value": "function main({ articles, result }) {\n    // 首先过滤出 result 值为\"1\"的文章（保留商业软文）\n    // 如果未提供 articles，则直接返回空结果\n    if (!articles || !Array.isArray(articles) || !result || !Array.isArray(result)) {\n        return {\n            error: \"输入无效：需要提供文章数组和结果数组\",\n            good_article1: \"none\",\n            good_article2: \"none\",\n            good_article3: \"none\",\n            good_article4: \"none\",\n            good_article5: \"none\"\n        };\n    }\n    \n    // 只保留那些对应 result 值为\"1\"的文章\n    const filteredArticles = articles.filter((article, index) => \n        index < result.length && result[index] === \"1\");\n    \n    // 创建结果对象，默认所有文章为\"none\"\n    const output = {\n        good_article1: \"none\",\n        good_article2: \"none\",\n        good_article3: \"none\",\n        good_article4: \"none\",\n        good_article5: \"none\"\n    };\n    \n    // 如果过滤后没有文章，直接返回全\"none\"结果\n    if (filteredArticles.length === 0) {\n        return output;\n    }\n    \n    // 随机洗牌数组 (Fisher-Yates 算法)\n    const shuffledArticles = [...filteredArticles];\n    for (let i = shuffledArticles.length - 1; i > 0; i--) {\n        const j = Math.floor(Math.random() * (i + 1));\n        [shuffledArticles[i], shuffledArticles[j]] = [shuffledArticles[j], shuffledArticles[i]];\n    }\n    \n    // 选择前 5篇文章(或更少)\n    const selectedCount = Math.min(5, shuffledArticles.length);\n    for (let i = 0; i < selectedCount; i++) {\n        output[`good_article${i+1}`] = shuffledArticles[i];\n    }\n    \n    return output;\n}",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "arrayString",
+          "canEdit": true,
+          "key": "articles",
+          "label": "articles",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": [
+            "miyAS5I7q9vT",
+            "qLUQfhG0ILRX"
+          ]
+        },
+        {
+          "renderTypeList": [
+            "reference"
+          ],
+          "valueType": "arrayString",
+          "canEdit": true,
+          "key": "result",
+          "label": "result",
+          "customInputConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": true
+          },
+          "required": true,
+          "value": [
+            "g96RrEBPGGZQ",
+            "loopArray"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "system_rawResponse",
+          "key": "system_rawResponse",
+          "label": "workflow:full_response_data",
+          "valueType": "object",
+          "type": "static",
+          "description": ""
+        },
+        {
+          "id": "error",
+          "key": "error",
+          "label": "workflow:execution_error",
+          "description": "代码运行错误信息，成功时返回空",
+          "valueType": "object",
+          "type": "static"
+        },
+        {
+          "id": "system_addOutputParam",
+          "key": "system_addOutputParam",
+          "type": "dynamic",
+          "valueType": "dynamic",
+          "label": "",
+          "customFieldConfig": {
+            "selectValueTypeList": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "arrayString",
+              "arrayNumber",
+              "arrayBoolean",
+              "arrayObject",
+              "arrayAny",
+              "any",
+              "chatHistory",
+              "datasetQuote",
+              "dynamic",
+              "selectApp",
+              "selectDataset"
+            ],
+            "showDescription": false,
+            "showDefaultValue": false
+          },
+          "description": "将代码中 return 的对象作为输出，传递给后续的节点。变量名需要对应 return 的 key",
+          "valueDesc": ""
+        },
+        {
+          "id": "qLUQfhG0ILRX",
+          "type": "dynamic",
+          "key": "good_article1",
+          "valueType": "string",
+          "label": "good_article1",
+          "valueDesc": "",
+          "description": ""
+        },
+        {
+          "id": "gR0mkQpJ4Og8",
+          "type": "dynamic",
+          "key": "good_article2",
+          "valueType": "string",
+          "label": "good_article2",
+          "valueDesc": "",
+          "description": ""
+        },
+        {
+          "id": "szoDaYDVZZSp",
+          "valueType": "string",
+          "type": "dynamic",
+          "key": "good_article3",
+          "label": "good_article3"
+        },
+        {
+          "id": "m6L9dD3nbxpC",
+          "valueType": "string",
+          "type": "dynamic",
+          "key": "good_article4",
+          "label": "good_article4"
+        },
+        {
+          "id": "fBVP5uO3H8mg",
+          "valueType": "string",
+          "type": "dynamic",
+          "key": "good_article5",
+          "label": "good_article5"
+        }
+      ]
+    },
+    {
+      "nodeId": "ima94WfmxpPA",
+      "name": "用户选择",
+      "intro": "该模块可配置多个选项，以供对话时选择。不同选项可导向不同工作流支线",
+      "avatar": "core/workflow/template/userSelect",
+      "flowNodeType": "userSelect",
+      "showStatus": true,
+      "position": {
+        "x": 4505.764302898561,
+        "y": -519.6339590662153
+      },
+      "version": "489",
+      "inputs": [
+        {
+          "key": "description",
+          "renderTypeList": [
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "说明文字",
+          "description": "app:workflow.select_description_tip",
+          "placeholder": "app:workflow.select_description_placeholder",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "请选择："
+        },
+        {
+          "renderTypeList": [
+            "custom"
+          ],
+          "valueType": "any",
+          "label": "",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "key": "userSelectOptions",
+          "value": [
+            {
+              "value": "帖子1",
+              "key": "option1"
+            },
+            {
+              "value": "帖子2",
+              "key": "option2"
+            },
+            {
+              "value": "帖子3",
+              "key": "sa6vUDhvCOcK"
+            },
+            {
+              "value": "帖子4",
+              "key": "d0zcxgPvhwcs"
+            },
+            {
+              "value": "帖子5",
+              "key": "aK4iWYiHBRkF"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "id": "selectResult",
+          "key": "selectResult",
+          "required": true,
+          "label": "app:workflow.select_result",
+          "valueType": "string",
+          "type": "static",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "nodeId": "iPZ0cBXrVaxY",
+      "name": "pineapple#5",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 5872.043379977971,
+        "y": -1974.0544743013995
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.5-pro-preview-03-25"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 32500,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 你的任务是分析用户搜索到的帖子，帮助识别这些帖子的可取之处以及背后机制。\n- 你需要特别关注微观的文本层面，比如句子、用词、表达等等，这些形式上的东西往往比情节内容更关键。\n\n# 背景知识\n对于很多做自媒体账号的人来说，他们自认为的“人设”，与其读者感知的“人设”存在Gap，使得很多时候用户并不清楚自己的某篇帖子为什么火。\n\n具体来说，用户为自己赋予的人设标签，往往只提供：\n  - 客观事实类信息设定，如「前大厂程序员」「三孩宝妈」\n  - 身份标签，如「enfp快乐小狗」「双子座」\n但读者不会因为你也是“天蝎座”就关注你。\n实际上读者看到一条帖子，并关注该账号，意味着“我想获得更多看到这条内容时的体验”。\n那么，读者更希望从这条帖子中获得什么体验？\n\n我们从读者视角具体进行了详细的分类：\n1.  信息输入：\n- “我觉得我需要持续获得这些信息（某个领域的知识、新闻、见解）”\n- “我感到新奇/焦虑”\n- “我喜欢这种信息摄入的体验方式（比如严肃正经、娱乐轻松、高效利用时间，等等）”\n\n2.  观点认同：\n- 某种基于阶层、性别、认知等的意识形态。\n- 例如民族主义叙事、女性主义观点、贫富对立等等倾向，能快速吸引属性相同的读者\n- 核心是让读者觉得“说的太对了、太通透了”\n \n3. 娱乐：\n- 某种娱乐“文学”、抽象文学、戏仿文学\n- 核心是深耕某个细分群体的独特经历、苦难来进行调侃创作，比如关于留子（留学生）在海外的生活、应届大学生找工作的痛苦，等等\n- 必须让读者觉得此人“experienced”：“不是真留子编不出这种段子”\n\n4. 理想（to be）：氛围感，调性，单纯对个人ip形象的欣赏\n\n## 抽象后可以看到，核心在于“共鸣”和“焦虑”。\n### “共鸣”分为两种：\n- 一种是相当细分的人群，在经历相似的情况下才能“会心一笑”的共鸣，比如情侣相处的“下头瞬间”，这些东西不是直接作为选题，而是作为内容中的一部分，读者读到某一句话，某一个场景，某个表述，然后被共鸣到，觉得“这个人确实懂”。读者希望获得更多这种体验，所以点关注。\n- 另一种是宏观的共鸣，是基于民族、政治、性别等等“站队式”的情绪区分的。比如帖子的观点是“坚决支持国家反制美国关税大棒”，就会天然吸引认同。但这种情绪上的认同能不能转化成关注量，则需要在形式和内容上下功夫。比如你比别人讲的透彻，讲的专业；或者你的煽动更有文采，更真人化、情绪化等等。\n\n### “焦虑”与“共鸣”是共生关系，一体两面。\n例如一部分群体有被长辈催婚的压力，有年龄和择偶的焦虑，有寻找灵魂伴侣而不得的焦虑，他们就需要去大量流览比如“相亲的糟糕体验”、“因为被催婚不回家过年了”等这样的帖子。人对抗焦虑的方式无非两种：一是寻找共鸣体验，“大家都这样”；二是给予自身暗示，“我是独特的，做自己就好”。\n\n# 输出格式 & WorkFlow\n- 每个套路都输出“原文”、“文本特征分析”、“读者感知分析”两部分"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "lSGKmidrfIvC",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "现在，我用你的搜索词\"{{$o5WsyGa00lb6.qb95YQhCAz3S$}}\"在社媒平台上搜索到了1篇超火的帖子，请结合上一步的思考，运用你的背景知识进行深度分析：\n\n{{$vtwrraUrH8WZ.gR0mkQpJ4Og8$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "bbdrybOfus2g",
+      "name": "orange#5",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 7478.096057174479,
+        "y": -2009.0437174739816
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 8000,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 工作流程：\n学习帖子的思路和文本特征，按照用户要求仿写\n\n# 注意必须有“素人感”，禁止任何结构化的语言，禁止任何商业化、套路化的话术。注意你是扮演一个真人从某个视角去写一些什么东西。帖子没有配图，只通过“标题”和“正文”来吸引读者，提供价值。\n\n# 注意下面这些细节：\n- 不要编造不存在的产品、品牌、公司等等\n- 互联网上一般不会透露自己的姓名、工作单位、薪资等等\n- 不要使用套路话术来要求“点赞”、“评论”等等，太假了"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "iPZ0cBXrVaxY",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "对于上一步你分析的帖子，仿写出3个例子，务必要学到其精髓，同时不能看起来太假，要有“素人感”、“活人感”、“真人感”\n\n用户的需求：{{$448745.userChatInput$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "dDFrYl2JmuAM",
+      "name": "指定回复#5",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 6610.823845122858,
+        "y": -1701.0253207275437
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\\n\n## 分析结果\n\n```json\n{{$vtwrraUrH8WZ.gR0mkQpJ4Og8$}}\n```\n\n### 分析：\n{{$iPZ0cBXrVaxY.answerText$}}\n"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "hENMxRExUgpR",
+      "name": "指定回复#5",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 8174.811727882025,
+        "y": -1856.0962678978146
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\n## 输出结果\n```\n{{$bbdrybOfus2g.answerText$}}\n```"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "dI2sB2QHTzsm",
+      "name": "pineapple#7",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 5888.528031267946,
+        "y": -739.3352185949968
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.5-pro-preview-03-25"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 32500,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 你的任务是分析用户搜索到的帖子，帮助识别这些帖子的可取之处以及背后机制。\n- 你需要特别关注微观的文本层面，比如句子、用词、表达等等，这些形式上的东西往往比情节内容更关键。\n\n# 背景知识\n对于很多做自媒体账号的人来说，他们自认为的“人设”，与其读者感知的“人设”存在Gap，使得很多时候用户并不清楚自己的某篇帖子为什么火。\n\n具体来说，用户为自己赋予的人设标签，往往只提供：\n  - 客观事实类信息设定，如「前大厂程序员」「三孩宝妈」\n  - 身份标签，如「enfp快乐小狗」「双子座」\n但读者不会因为你也是“天蝎座”就关注你。\n实际上读者看到一条帖子，并关注该账号，意味着“我想获得更多看到这条内容时的体验”。\n那么，读者更希望从这条帖子中获得什么体验？\n\n我们从读者视角具体进行了详细的分类：\n1.  信息输入：\n- “我觉得我需要持续获得这些信息（某个领域的知识、新闻、见解）”\n- “我感到新奇/焦虑”\n- “我喜欢这种信息摄入的体验方式（比如严肃正经、娱乐轻松、高效利用时间，等等）”\n\n2.  观点认同：\n- 某种基于阶层、性别、认知等的意识形态。\n- 例如民族主义叙事、女性主义观点、贫富对立等等倾向，能快速吸引属性相同的读者\n- 核心是让读者觉得“说的太对了、太通透了”\n \n3. 娱乐：\n- 某种娱乐“文学”、抽象文学、戏仿文学\n- 核心是深耕某个细分群体的独特经历、苦难来进行调侃创作，比如关于留子（留学生）在海外的生活、应届大学生找工作的痛苦，等等\n- 必须让读者觉得此人“experienced”：“不是真留子编不出这种段子”\n\n4. 理想（to be）：氛围感，调性，单纯对个人ip形象的欣赏\n\n## 抽象后可以看到，核心在于“共鸣”和“焦虑”。\n### “共鸣”分为两种：\n- 一种是相当细分的人群，在经历相似的情况下才能“会心一笑”的共鸣，比如情侣相处的“下头瞬间”，这些东西不是直接作为选题，而是作为内容中的一部分，读者读到某一句话，某一个场景，某个表述，然后被共鸣到，觉得“这个人确实懂”。读者希望获得更多这种体验，所以点关注。\n- 另一种是宏观的共鸣，是基于民族、政治、性别等等“站队式”的情绪区分的。比如帖子的观点是“坚决支持国家反制美国关税大棒”，就会天然吸引认同。但这种情绪上的认同能不能转化成关注量，则需要在形式和内容上下功夫。比如你比别人讲的透彻，讲的专业；或者你的煽动更有文采，更真人化、情绪化等等。\n\n### “焦虑”与“共鸣”是共生关系，一体两面。\n例如一部分群体有被长辈催婚的压力，有年龄和择偶的焦虑，有寻找灵魂伴侣而不得的焦虑，他们就需要去大量流览比如“相亲的糟糕体验”、“因为被催婚不回家过年了”等这样的帖子。人对抗焦虑的方式无非两种：一是寻找共鸣体验，“大家都这样”；二是给予自身暗示，“我是独特的，做自己就好”。\n\n# 输出格式 & WorkFlow\n- 每个套路都输出“原文”、“文本特征分析”、“读者感知分析”两部分"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "lSGKmidrfIvC",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "现在，我用你的搜索词\"{{$o5WsyGa00lb6.qb95YQhCAz3S$}}\"在社媒平台上搜索到了1篇超火的帖子，请结合上一步的思考，运用你的背景知识进行深度分析：\n\n{{$vtwrraUrH8WZ.szoDaYDVZZSp$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "iUhallc0L1nL",
+      "name": "orange#7",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 7494.580708464454,
+        "y": -774.3244617675789
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 8000,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 工作流程：\n学习帖子的思路和文本特征，按照用户要求仿写\n\n# 注意必须有“素人感”，禁止任何结构化的语言，禁止任何商业化、套路化的话术。注意你是扮演一个真人从某个视角去写一些什么东西。帖子没有配图，只通过“标题”和“正文”来吸引读者，提供价值。\n\n# 注意下面这些细节：\n- 不要编造不存在的产品、品牌、公司等等\n- 互联网上一般不会透露自己的姓名、工作单位、薪资等等\n- 不要使用套路话术来要求“点赞”、“评论”等等，太假了"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "dI2sB2QHTzsm",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "对于上一步你分析的帖子，仿写出3个例子，务必要学到其精髓，同时不能看起来太假，要有“素人感”、“活人感”、“真人感”\n\n用户的需求：{{$448745.userChatInput$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "b2EFcq8QNYza",
+      "name": "指定回复#7",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 6627.308496412833,
+        "y": -488.4849523219966
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\\n\n## 分析结果\n\n```json\n{{$vtwrraUrH8WZ.szoDaYDVZZSp$}}\n```\n\n### 分析：\n{{$dI2sB2QHTzsm.answerText$}}\n"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "vvZ6TQS9ROHp",
+      "name": "指定回复#7",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 8191.296379171999,
+        "y": -621.377012191411
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\n## 输出结果\n```\n{{$iUhallc0L1nL.answerText$}}\n```"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "v6R1MUgoPAxn",
+      "name": "pineapple#9",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 5872.043379977971,
+        "y": 580.1197972588518
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.5-pro-preview-03-25"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 32500,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 你的任务是分析用户搜索到的帖子，帮助识别这些帖子的可取之处以及背后机制。\n- 你需要特别关注微观的文本层面，比如句子、用词、表达等等，这些形式上的东西往往比情节内容更关键。\n\n# 背景知识\n对于很多做自媒体账号的人来说，他们自认为的“人设”，与其读者感知的“人设”存在Gap，使得很多时候用户并不清楚自己的某篇帖子为什么火。\n\n具体来说，用户为自己赋予的人设标签，往往只提供：\n  - 客观事实类信息设定，如「前大厂程序员」「三孩宝妈」\n  - 身份标签，如「enfp快乐小狗」「双子座」\n但读者不会因为你也是“天蝎座”就关注你。\n实际上读者看到一条帖子，并关注该账号，意味着“我想获得更多看到这条内容时的体验”。\n那么，读者更希望从这条帖子中获得什么体验？\n\n我们从读者视角具体进行了详细的分类：\n1.  信息输入：\n- “我觉得我需要持续获得这些信息（某个领域的知识、新闻、见解）”\n- “我感到新奇/焦虑”\n- “我喜欢这种信息摄入的体验方式（比如严肃正经、娱乐轻松、高效利用时间，等等）”\n\n2.  观点认同：\n- 某种基于阶层、性别、认知等的意识形态。\n- 例如民族主义叙事、女性主义观点、贫富对立等等倾向，能快速吸引属性相同的读者\n- 核心是让读者觉得“说的太对了、太通透了”\n \n3. 娱乐：\n- 某种娱乐“文学”、抽象文学、戏仿文学\n- 核心是深耕某个细分群体的独特经历、苦难来进行调侃创作，比如关于留子（留学生）在海外的生活、应届大学生找工作的痛苦，等等\n- 必须让读者觉得此人“experienced”：“不是真留子编不出这种段子”\n\n4. 理想（to be）：氛围感，调性，单纯对个人ip形象的欣赏\n\n## 抽象后可以看到，核心在于“共鸣”和“焦虑”。\n### “共鸣”分为两种：\n- 一种是相当细分的人群，在经历相似的情况下才能“会心一笑”的共鸣，比如情侣相处的“下头瞬间”，这些东西不是直接作为选题，而是作为内容中的一部分，读者读到某一句话，某一个场景，某个表述，然后被共鸣到，觉得“这个人确实懂”。读者希望获得更多这种体验，所以点关注。\n- 另一种是宏观的共鸣，是基于民族、政治、性别等等“站队式”的情绪区分的。比如帖子的观点是“坚决支持国家反制美国关税大棒”，就会天然吸引认同。但这种情绪上的认同能不能转化成关注量，则需要在形式和内容上下功夫。比如你比别人讲的透彻，讲的专业；或者你的煽动更有文采，更真人化、情绪化等等。\n\n### “焦虑”与“共鸣”是共生关系，一体两面。\n例如一部分群体有被长辈催婚的压力，有年龄和择偶的焦虑，有寻找灵魂伴侣而不得的焦虑，他们就需要去大量流览比如“相亲的糟糕体验”、“因为被催婚不回家过年了”等这样的帖子。人对抗焦虑的方式无非两种：一是寻找共鸣体验，“大家都这样”；二是给予自身暗示，“我是独特的，做自己就好”。\n\n# 输出格式 & WorkFlow\n- 每个套路都输出“原文”、“文本特征分析”、“读者感知分析”两部分"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "lSGKmidrfIvC",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "现在，我用你的搜索词\"{{$o5WsyGa00lb6.qb95YQhCAz3S$}}\"在社媒平台上搜索到了1篇超火的帖子，请结合上一步的思考，运用你的背景知识进行深度分析：\n\n{{$vtwrraUrH8WZ.m6L9dD3nbxpC$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "nOanrpBkHc8I",
+      "name": "orange#9",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 7478.096057174479,
+        "y": 545.1305540862697
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 8000,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 工作流程：\n学习帖子的思路和文本特征，按照用户要求仿写\n\n# 注意必须有“素人感”，禁止任何结构化的语言，禁止任何商业化、套路化的话术。注意你是扮演一个真人从某个视角去写一些什么东西。帖子没有配图，只通过“标题”和“正文”来吸引读者，提供价值。\n\n# 注意下面这些细节：\n- 不要编造不存在的产品、品牌、公司等等\n- 互联网上一般不会透露自己的姓名、工作单位、薪资等等\n- 不要使用套路话术来要求“点赞”、“评论”等等，太假了"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "v6R1MUgoPAxn",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "对于上一步你分析的帖子，仿写出3个例子，务必要学到其精髓，同时不能看起来太假，要有“素人感”、“活人感”、“真人感”\n\n用户的需求：{{$448745.userChatInput$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "xZROl8qrTCkT",
+      "name": "指定回复#9",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 6610.823845122858,
+        "y": 830.970063531852
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\\n\n## 分析结果\n\n```json\n{{$vtwrraUrH8WZ.m6L9dD3nbxpC$}}\n```\n\n### 分析：\n{{$v6R1MUgoPAxn.answerText$}}\n"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "rJTk8SnHqkA5",
+      "name": "指定回复#9",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 8174.811727882025,
+        "y": 698.0780036624376
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\n## 输出结果\n```\n{{$nOanrpBkHc8I.answerText$}}\n```"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "bhPyjaXNhqti",
+      "name": "pineapple#11",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 5888.528031267946,
+        "y": 1939.6297291249412
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "gemini-2.5-pro-preview-03-25"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 32500,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "value": false,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 你的任务是分析用户搜索到的帖子，帮助识别这些帖子的可取之处以及背后机制。\n- 你需要特别关注微观的文本层面，比如句子、用词、表达等等，这些形式上的东西往往比情节内容更关键。\n\n# 背景知识\n对于很多做自媒体账号的人来说，他们自认为的“人设”，与其读者感知的“人设”存在Gap，使得很多时候用户并不清楚自己的某篇帖子为什么火。\n\n具体来说，用户为自己赋予的人设标签，往往只提供：\n  - 客观事实类信息设定，如「前大厂程序员」「三孩宝妈」\n  - 身份标签，如「enfp快乐小狗」「双子座」\n但读者不会因为你也是“天蝎座”就关注你。\n实际上读者看到一条帖子，并关注该账号，意味着“我想获得更多看到这条内容时的体验”。\n那么，读者更希望从这条帖子中获得什么体验？\n\n我们从读者视角具体进行了详细的分类：\n1.  信息输入：\n- “我觉得我需要持续获得这些信息（某个领域的知识、新闻、见解）”\n- “我感到新奇/焦虑”\n- “我喜欢这种信息摄入的体验方式（比如严肃正经、娱乐轻松、高效利用时间，等等）”\n\n2.  观点认同：\n- 某种基于阶层、性别、认知等的意识形态。\n- 例如民族主义叙事、女性主义观点、贫富对立等等倾向，能快速吸引属性相同的读者\n- 核心是让读者觉得“说的太对了、太通透了”\n \n3. 娱乐：\n- 某种娱乐“文学”、抽象文学、戏仿文学\n- 核心是深耕某个细分群体的独特经历、苦难来进行调侃创作，比如关于留子（留学生）在海外的生活、应届大学生找工作的痛苦，等等\n- 必须让读者觉得此人“experienced”：“不是真留子编不出这种段子”\n\n4. 理想（to be）：氛围感，调性，单纯对个人ip形象的欣赏\n\n## 抽象后可以看到，核心在于“共鸣”和“焦虑”。\n### “共鸣”分为两种：\n- 一种是相当细分的人群，在经历相似的情况下才能“会心一笑”的共鸣，比如情侣相处的“下头瞬间”，这些东西不是直接作为选题，而是作为内容中的一部分，读者读到某一句话，某一个场景，某个表述，然后被共鸣到，觉得“这个人确实懂”。读者希望获得更多这种体验，所以点关注。\n- 另一种是宏观的共鸣，是基于民族、政治、性别等等“站队式”的情绪区分的。比如帖子的观点是“坚决支持国家反制美国关税大棒”，就会天然吸引认同。但这种情绪上的认同能不能转化成关注量，则需要在形式和内容上下功夫。比如你比别人讲的透彻，讲的专业；或者你的煽动更有文采，更真人化、情绪化等等。\n\n### “焦虑”与“共鸣”是共生关系，一体两面。\n例如一部分群体有被长辈催婚的压力，有年龄和择偶的焦虑，有寻找灵魂伴侣而不得的焦虑，他们就需要去大量流览比如“相亲的糟糕体验”、“因为被催婚不回家过年了”等这样的帖子。人对抗焦虑的方式无非两种：一是寻找共鸣体验，“大家都这样”；二是给予自身暗示，“我是独特的，做自己就好”。\n\n# 输出格式 & WorkFlow\n- 每个套路都输出“原文”、“文本特征分析”、“读者感知分析”两部分"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "lSGKmidrfIvC",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "现在，我用你的搜索词\"{{$o5WsyGa00lb6.qb95YQhCAz3S$}}\"在社媒平台上搜索到了1篇超火的帖子，请结合上一步的思考，运用你的背景知识进行深度分析：\n\n{{$vtwrraUrH8WZ.fBVP5uO3H8mg$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "yw5rBxP1qJrb",
+      "name": "orange#11",
+      "intro": "AI 大模型对话",
+      "avatar": "core/workflow/template/aiChat",
+      "flowNodeType": "chatNode",
+      "showStatus": true,
+      "position": {
+        "x": 7494.580708464454,
+        "y": 1904.640485952359
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "model",
+          "renderTypeList": [
+            "settingLLMModel",
+            "reference"
+          ],
+          "label": "AI 模型",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+        },
+        {
+          "key": "temperature",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 3,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "maxToken",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": 8000,
+          "valueType": "number",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "isResponseAnswerText",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": false,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatReasoning",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "promptcaching",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "value": true,
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatQuoteRole",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "value": "system",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quoteTemplate",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "quotePrompt",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatVision",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "boolean",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": true
+        },
+        {
+          "key": "aiChatStopSign",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatResponseFormat",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "aiChatJsonSchema",
+          "renderTypeList": [
+            "hidden"
+          ],
+          "label": "",
+          "valueType": "string",
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "systemPrompt",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "max": 3000,
+          "valueType": "string",
+          "label": "提示词",
+          "description": "core.app.tip.systemPromptTip",
+          "placeholder": "core.app.tip.chatNodeSystemPromptTip",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "# 工作流程：\n学习帖子的思路和文本特征，按照用户要求仿写\n\n# 注意必须有“素人感”，禁止任何结构化的语言，禁止任何商业化、套路化的话术。注意你是扮演一个真人从某个视角去写一些什么东西。帖子没有配图，只通过“标题”和“正文”来吸引读者，提供价值。\n\n# 注意下面这些细节：\n- 不要编造不存在的产品、品牌、公司等等\n- 互联网上一般不会透露自己的姓名、工作单位、薪资等等\n- 不要使用套路话术来要求“点赞”、“评论”等等，太假了"
+        },
+        {
+          "key": "history",
+          "renderTypeList": [
+            "numberInput",
+            "reference"
+          ],
+          "valueType": "chatHistory",
+          "label": "聊天记录",
+          "description": "workflow:max_dialog_rounds",
+          "required": true,
+          "min": 0,
+          "max": 50,
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "selectedTypeIndex": 1,
+          "value": [
+            "bhPyjaXNhqti",
+            "history"
+          ]
+        },
+        {
+          "key": "quoteQA",
+          "renderTypeList": [
+            "settingDatasetQuotePrompt"
+          ],
+          "label": "",
+          "debugLabel": "知识库引用",
+          "description": "",
+          "valueType": "datasetQuote",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "stringQuoteText",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "label": "文档引用",
+          "debugLabel": "文档引用",
+          "description": "app:document_quote_tip",
+          "valueType": "string",
+          "valueDesc": "",
+          "toolDescription": ""
+        },
+        {
+          "key": "userChatInput",
+          "renderTypeList": [
+            "reference",
+            "textarea"
+          ],
+          "valueType": "string",
+          "label": "用户问题",
+          "toolDescription": "用户问题",
+          "required": true,
+          "valueDesc": "",
+          "description": "",
+          "debugLabel": "",
+          "selectedTypeIndex": 1,
+          "value": "对于上一步你分析的帖子，仿写出3个例子，务必要学到其精髓，同时不能看起来太假，要有“素人感”、“活人感”、“真人感”\n\n用户的需求：{{$448745.userChatInput$}}"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "history",
+          "key": "history",
+          "required": true,
+          "label": "common:core.module.output.label.New context",
+          "description": "将本次回复内容拼接上历史记录，作为新的上下文返回",
+          "valueType": "chatHistory",
+          "valueDesc": "{\n  obj: System | Human | AI;\n  value: string;\n}[]",
+          "type": "static"
+        },
+        {
+          "id": "answerText",
+          "key": "answerText",
+          "required": true,
+          "label": "common:core.module.output.label.Ai response content",
+          "description": "将在 stream 回复完毕后触发",
+          "valueType": "string",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "nodeId": "mVaiJO5gtAVJ",
+      "name": "指定回复#11",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 6627.308496412833,
+        "y": 2190.479995397941
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\\n\n## 分析结果\n\n```json\n{{$vtwrraUrH8WZ.fBVP5uO3H8mg$}}\n```\n\n### 分析：\n{{$bhPyjaXNhqti.answerText$}}\n"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "nodeId": "me951fmzKptZ",
+      "name": "指定回复#11",
+      "intro": "该模块可以直接回复一段指定的内容。常用于引导、提示。非字符串内容传入时，会转成字符串进行输出。",
+      "avatar": "core/workflow/template/reply",
+      "flowNodeType": "answerNode",
+      "position": {
+        "x": 8191.296379171999,
+        "y": 2057.587935528526
+      },
+      "version": "481",
+      "inputs": [
+        {
+          "key": "text",
+          "renderTypeList": [
+            "textarea",
+            "reference"
+          ],
+          "valueType": "any",
+          "required": true,
+          "label": "回复的内容",
+          "description": "common:core.module.input.description.Response content",
+          "placeholder": "common:core.module.input.description.Response content",
+          "valueDesc": "",
+          "debugLabel": "",
+          "toolDescription": "",
+          "value": "\n## 输出结果\n```\n{{$yw5rBxP1qJrb.answerText$}}\n```"
+        }
+      ],
+      "outputs": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "448745",
+      "target": "lSGKmidrfIvC",
+      "sourceHandle": "448745-source-right",
+      "targetHandle": "lSGKmidrfIvC-target-left"
+    },
+    {
+      "source": "lSGKmidrfIvC",
+      "target": "o5WsyGa00lb6",
+      "sourceHandle": "lSGKmidrfIvC-source-right",
+      "targetHandle": "o5WsyGa00lb6-target-left"
+    },
+    {
+      "source": "o5WsyGa00lb6",
+      "target": "moMw7CTSCIL5",
+      "sourceHandle": "o5WsyGa00lb6-source-right",
+      "targetHandle": "moMw7CTSCIL5-target-left"
+    },
+    {
+      "source": "moMw7CTSCIL5",
+      "target": "miyAS5I7q9vT",
+      "sourceHandle": "moMw7CTSCIL5-source-right",
+      "targetHandle": "miyAS5I7q9vT-target-left"
+    },
+    {
+      "source": "hQuQUux8k6UU",
+      "target": "bqGWMvMZqduR",
+      "sourceHandle": "hQuQUux8k6UU-source-right",
+      "targetHandle": "bqGWMvMZqduR-target-left"
+    },
+    {
+      "source": "bqGWMvMZqduR",
+      "target": "grnoJjrjO4xo",
+      "sourceHandle": "bqGWMvMZqduR-source-right",
+      "targetHandle": "grnoJjrjO4xo-target-left"
+    },
+    {
+      "source": "grnoJjrjO4xo",
+      "target": "sF2YF4B4kjJL",
+      "sourceHandle": "grnoJjrjO4xo-source-right",
+      "targetHandle": "sF2YF4B4kjJL-target-left"
+    },
+    {
+      "source": "cF01tJjOM2N4",
+      "target": "jRXcvilMA1RX",
+      "sourceHandle": "cF01tJjOM2N4-source-right",
+      "targetHandle": "jRXcvilMA1RX-target-left"
+    },
+    {
+      "source": "jRXcvilMA1RX",
+      "target": "cANjtq5Swyu7",
+      "sourceHandle": "jRXcvilMA1RX-source-right",
+      "targetHandle": "cANjtq5Swyu7-target-left"
+    },
+    {
+      "source": "cANjtq5Swyu7",
+      "target": "wtynErV4Koer",
+      "sourceHandle": "cANjtq5Swyu7-source-right",
+      "targetHandle": "wtynErV4Koer-target-left"
+    },
+    {
+      "source": "miyAS5I7q9vT",
+      "target": "nacEmwPlkPzB",
+      "sourceHandle": "miyAS5I7q9vT-source-right",
+      "targetHandle": "nacEmwPlkPzB-target-left"
+    },
+    {
+      "source": "nacEmwPlkPzB",
+      "target": "g96RrEBPGGZQ",
+      "sourceHandle": "nacEmwPlkPzB-source-IF",
+      "targetHandle": "g96RrEBPGGZQ-target-left"
+    },
+    {
+      "source": "nacEmwPlkPzB",
+      "target": "fTvv1QO3MBoI",
+      "sourceHandle": "nacEmwPlkPzB-source-ELSE",
+      "targetHandle": "fTvv1QO3MBoI-target-left"
+    },
+    {
+      "source": "vtwrraUrH8WZ",
+      "target": "bd6NE5Uynqvx",
+      "sourceHandle": "vtwrraUrH8WZ-source-right",
+      "targetHandle": "bd6NE5Uynqvx-target-left"
+    },
+    {
+      "source": "g96RrEBPGGZQ",
+      "target": "vtwrraUrH8WZ",
+      "sourceHandle": "g96RrEBPGGZQ-source-right",
+      "targetHandle": "vtwrraUrH8WZ-target-left"
+    },
+    {
+      "source": "bd6NE5Uynqvx",
+      "target": "ima94WfmxpPA",
+      "sourceHandle": "bd6NE5Uynqvx-source-right",
+      "targetHandle": "ima94WfmxpPA-target-left"
+    },
+    {
+      "source": "ima94WfmxpPA",
+      "target": "hQuQUux8k6UU",
+      "sourceHandle": "ima94WfmxpPA-source-option1",
+      "targetHandle": "hQuQUux8k6UU-target-left"
+    },
+    {
+      "source": "ima94WfmxpPA",
+      "target": "iPZ0cBXrVaxY",
+      "sourceHandle": "ima94WfmxpPA-source-option2",
+      "targetHandle": "iPZ0cBXrVaxY-target-left"
+    },
+    {
+      "source": "ima94WfmxpPA",
+      "target": "dI2sB2QHTzsm",
+      "sourceHandle": "ima94WfmxpPA-source-sa6vUDhvCOcK",
+      "targetHandle": "dI2sB2QHTzsm-target-left"
+    },
+    {
+      "source": "ima94WfmxpPA",
+      "target": "v6R1MUgoPAxn",
+      "sourceHandle": "ima94WfmxpPA-source-d0zcxgPvhwcs",
+      "targetHandle": "v6R1MUgoPAxn-target-left"
+    },
+    {
+      "source": "ima94WfmxpPA",
+      "target": "bhPyjaXNhqti",
+      "sourceHandle": "ima94WfmxpPA-source-aK4iWYiHBRkF",
+      "targetHandle": "bhPyjaXNhqti-target-left"
+    },
+    {
+      "source": "iPZ0cBXrVaxY",
+      "target": "dDFrYl2JmuAM",
+      "sourceHandle": "iPZ0cBXrVaxY-source-right",
+      "targetHandle": "dDFrYl2JmuAM-target-left"
+    },
+    {
+      "source": "dDFrYl2JmuAM",
+      "target": "bbdrybOfus2g",
+      "sourceHandle": "dDFrYl2JmuAM-source-right",
+      "targetHandle": "bbdrybOfus2g-target-left"
+    },
+    {
+      "source": "bbdrybOfus2g",
+      "target": "hENMxRExUgpR",
+      "sourceHandle": "bbdrybOfus2g-source-right",
+      "targetHandle": "hENMxRExUgpR-target-left"
+    },
+    {
+      "source": "dI2sB2QHTzsm",
+      "target": "b2EFcq8QNYza",
+      "sourceHandle": "dI2sB2QHTzsm-source-right",
+      "targetHandle": "b2EFcq8QNYza-target-left"
+    },
+    {
+      "source": "v6R1MUgoPAxn",
+      "target": "xZROl8qrTCkT",
+      "sourceHandle": "v6R1MUgoPAxn-source-right",
+      "targetHandle": "xZROl8qrTCkT-target-left"
+    },
+    {
+      "source": "xZROl8qrTCkT",
+      "target": "nOanrpBkHc8I",
+      "sourceHandle": "xZROl8qrTCkT-source-right",
+      "targetHandle": "nOanrpBkHc8I-target-left"
+    },
+    {
+      "source": "nOanrpBkHc8I",
+      "target": "rJTk8SnHqkA5",
+      "sourceHandle": "nOanrpBkHc8I-source-right",
+      "targetHandle": "rJTk8SnHqkA5-target-left"
+    },
+    {
+      "source": "b2EFcq8QNYza",
+      "target": "iUhallc0L1nL",
+      "sourceHandle": "b2EFcq8QNYza-source-right",
+      "targetHandle": "iUhallc0L1nL-target-left"
+    },
+    {
+      "source": "iUhallc0L1nL",
+      "target": "vvZ6TQS9ROHp",
+      "sourceHandle": "iUhallc0L1nL-source-right",
+      "targetHandle": "vvZ6TQS9ROHp-target-left"
+    },
+    {
+      "source": "bhPyjaXNhqti",
+      "target": "mVaiJO5gtAVJ",
+      "sourceHandle": "bhPyjaXNhqti-source-right",
+      "targetHandle": "mVaiJO5gtAVJ-target-left"
+    },
+    {
+      "source": "mVaiJO5gtAVJ",
+      "target": "yw5rBxP1qJrb",
+      "sourceHandle": "mVaiJO5gtAVJ-source-right",
+      "targetHandle": "yw5rBxP1qJrb-target-left"
+    },
+    {
+      "source": "yw5rBxP1qJrb",
+      "target": "me951fmzKptZ",
+      "sourceHandle": "yw5rBxP1qJrb-source-right",
+      "targetHandle": "me951fmzKptZ-target-left"
+    }
+  ],
+  "chatConfig": {
+    "welcomeText": "### Welcome 2 NOVA, your personalized social media strategist!\n\nPLZ enter your ideas, knowhows, interested fields, etc",
+    "variables": [],
+    "scheduledTriggerConfig": {
+      "cronString": "",
+      "timezone": "Asia/Shanghai",
+      "defaultPrompt": ""
+    },
+    "chatStartLogic": true,
+    "_id": "6825e1dadff4913984dd49e6"
+  }
+}
