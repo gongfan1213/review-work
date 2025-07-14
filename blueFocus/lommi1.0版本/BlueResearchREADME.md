@@ -607,7 +607,7 @@ curl -X POST "http://localhost:8000/bluechat" \
 ## 🔍 Jina AI搜索集成
 
 ### 配置信息
-- **API Key**: `jina_b17bde3cc6d749ae93c5bfae2d212236Jj0FH7SW_jMA3r5_grSai73BJZEO`
+- **API Key**: `xxxxxxxxxxx`
 - **Base URL**: `https://r.jina.ai/`
 - **搜索深度**: 每次查询最多10个结果
 
